@@ -1,0 +1,149 @@
+@import 'bootstrap';
+@import 'responsive';
+
+a[rel="popover"] {
+	background-color: rgba(255,255,255,0.7);
+	font-size: 18px;
+	font-weight: bold;
+	color: red;
+	display: block;
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	border: 1px solid black;
+	.border-radius(5px);
+}
+
+
+#unsupported-device {
+	display: none;
+}
+#evaporator-button {
+	top:20%;
+	left:64%;
+	width:140px;
+}
+#accumulator-button {
+	top: 20%;
+	left: 55%;		
+}
+#compressor-button {
+	top:38%;
+	left:37%;		
+}
+#condenser-button {
+	top:40%;
+	left:12%;
+	height:200px;
+	width:150px;
+
+}
+#orifice-button {
+	top:35%;
+	left:64%;		
+}
+#expansion-button {
+	top:35%;
+	left:55%;
+}
+#lines-button {
+	top:55%;
+	left:35%;
+	width: 22%;
+	background-color: transparent;
+	border:0px;
+}
+#lines2-button {
+	top:28%;
+	left:47%;
+	width: 22%;
+	width: 5%;
+	background-color: transparent;
+	border:0px;
+}
+#leak {
+	top:44%;
+	left:46%;
+	background-color:transparent;
+	border:0px;
+}
+
+
+#content {
+	position: relative;
+}
+
+// Landscape phones and down
+@media (max-width: 480px) {
+	#unsupported-device {display: block;}
+	#content {display:none}
+}
+
+
+
+// Landscape phone to portrait tablet
+@media (max-width: 767px) {
+	#evaporator-button {
+		
+	}
+	#accumulator-button {
+		
+	}
+	#compressor-button {
+		
+	}
+	#condenser-button {
+		height:100px;
+		width:50px;
+	}
+	#orifice-button {
+		
+	}
+	#expansion-button {
+	}
+	a[rel="popover"] {
+		height:30px;
+		width:30px;
+		font-size:14px;
+	}
+
+}
+
+// Portrait tablet to landscape and desktop
+@media (min-width: 768px) and (max-width: 979px) {
+	#evaporator-button {
+		
+	}
+	#accumulator-button {
+		
+	}
+	#compressor-button {
+		
+	}
+	#condenser-button {
+		height:150px;
+		width:100px;
+	}
+	#orifice-button {
+		
+	}
+	#expansion-button {
+	}
+	a[rel="popover"] {
+		height:60px;
+		width:60px;
+		font-size:16px;
+	}
+}
+
+@media (min-width: 980px) and (max-width: 1199px) {
+	a[rel="popover"] {
+		height:80px;
+		width:80px;
+		font-size:16px;
+	}
+}
+
+// Large desktop
+@media (min-width: 1200px) {
+}
