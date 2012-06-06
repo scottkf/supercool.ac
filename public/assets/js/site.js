@@ -7,12 +7,10 @@ $(document).ready(function() {
 		show:false,
 	})
 	$('.modal').on('show', function() {
-		console.log(this)
 		if (!$(this).hasClass('in')) {
 			$('.modal').modal('hide')			
 		}
 	});
-	// $('.modal').modal('hide')
 	$('#vehicle-toggle button').on('click', function() {
 		$('.vehicle-group').hide();
 		target = $(this).attr('data-target');
