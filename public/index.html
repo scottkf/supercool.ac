@@ -38,20 +38,32 @@
 	            </div>
 	    		<div id="standard-group" class="vehicle-group">
 			    	<img src="/assets/img/standard-car4.jpg" />
-			    	<a id="leak" rel="popover" data-content="leak illuminated with UV light" data-title="leak"></a>
-			    	<a id="evaporator-button"  data-content="removes heat from vehicle cabin and blows cold air in. Can be expensive to replace often resulting in high labor costs. <strong>Click again for detail.</strong>" data-toggle="modal" title="Evaporator" rel="popover" href="#evaporator-modal" ><span>Evaporator</span></a>
-			    	<a id="accumulator-button"  data-content="contains desiccant crystals. Primary function is to remove moisture from A/C system. Should be replaced whenever the system is opened. <strong>Click again for detail.</strong>" data-toggle="modal" title="Accumulator / Receiver Dryer" rel="popover" href="#accumulator-modal" ><span>Accumlator / Receiver Dryer</span></a>
-			    	<a id="compressor-button"  data-content="the heart of the A/C system. #1 cause of compressor failure is lack of lubrication. <strong>Click again for detail.</strong>" data-toggle="modal" title="Compressor" rel="popover" href="#compressor-modal" ><span>Compressor</span></a>
-			    	<a id="condenser-button"  data-content="operates under high pressure and dispenses heat out of A/C system into the atmosphere. <strong>Click again for detail.</strong>" data-toggle="modal" title="Condenser" rel="popover" href="#condenser-modal" ><span>Condenser</span></a>
-			    	<a id="orifice-button"  data-content="(orifice tube system) – meters flow of refrigerant into the evaporator. Should be replaced when system is opened. <strong>Click again for detail.</strong>" data-toggle="modal" title="Orifice tube" rel="popover" href="#orifice-modal" ><span>Orifice Tube / TVX</span></a>
-			    	<a id="refrigerant-button"  data-content="(expansion device system) – meters flow of refrigerant into the evaporator. Should be serviced or replaced when system is opened. <strong>Click again for detail.</strong>" data-toggle="modal" href="#refigerant-modal" rel="popover" title="Refigerant"><span>Refigerant</span></a>
+			    	<a id="evaporator-button"  data-content="removes heat from vehicle cabin and blows cold air in. Can be expensive to replace often resulting in high labor costs. <strong>Click again for detail.</strong>" data-toggle="modal" title="Evaporator" rel="popover" href="#evaporator-modal" ></a>
+			    	<a class="component-text" id="evaporator-text" data-content="removes heat from vehicle cabin and blows cold air in. Can be expensive to replace often resulting in high labor costs. <strong>Click again for detail.</strong>" data-toggle="modal" title="Evaporator" rel="popover" href="#evaporator-modal">Evaporator<br/><canvas height="200" width="200" id="evaporator-canvas"/></a>
+
+			    	<a id="accumulator-button"  data-content="contains desiccant crystals. Primary function is to remove moisture from A/C system. Should be replaced whenever the system is opened. <strong>Click again for detail.</strong>" data-toggle="modal" title="Accumulator / Receiver Dryer" rel="popover" href="#accumulator-modal" ></a>
+			    	<a class="component-text" id="accumulator-text"  data-content="contains desiccant crystals. Primary function is to remove moisture from A/C system. Should be replaced whenever the system is opened. <strong>Click again for detail.</strong>" data-toggle="modal" title="Accumulator / Receiver Dryer" rel="popover" href="#accumulator-modal" >Accumlator / <br/>Receiver Dryer<br/><canvas height="200" width="200" id="accumulator-canvas"/></a>	  
+			    	  	
+			    	<a id="compressor-button"  data-content="the heart of the A/C system. #1 cause of compressor failure is lack of lubrication. <strong>Click again for detail.</strong>" data-toggle="modal" title="Compressor" rel="popover" href="#compressor-modal" ></a>
+			    	<a class="component-text" id="compressor-text"  data-content="the heart of the A/C system. #1 cause of compressor failure is lack of lubrication. <strong>Click again for detail.</strong>" data-toggle="modal" title="Compressor" rel="popover" href="#compressor-modal" >Compressor<br/><canvas height="200" width="200" id="compressor-canvas"/></a>
+
+			    	<a id="condenser-button"  data-content="operates under high pressure and dispenses heat out of A/C system into the atmosphere. <strong>Click again for detail.</strong>" data-toggle="modal" title="Condenser" rel="popover" href="#condenser-modal" ></a>
+			    	<a class="component-text" id="condenser-text"  data-content="operates under high pressure and dispenses heat out of A/C system into the atmosphere. <strong>Click again for detail.</strong>" data-toggle="modal" title="Condenser" rel="popover" href="#condenser-modal" >Condenser<br/><canvas height="200" width="200" id="condenser-canvas"/></a>
+
+			    	<a id="orifice-button"  data-content="(orifice tube system) – meters flow of refrigerant into the evaporator. Should be replaced when system is opened. <strong>Click again for detail.</strong>" data-toggle="modal" title="Orifice tube" rel="popover" href="#orifice-modal" ></a>
+			    	<a class="component-text" id="orifice-text"  data-content="(orifice tube system) – meters flow of refrigerant into the evaporator. Should be replaced when system is opened. <strong>Click again for detail.</strong>" data-toggle="modal" title="Orifice tube" rel="popover" href="#orifice-modal" >Orifice Tube / TVX<br /><canvas height="200" width="200" id="orifice-canvas"></a>
+
+			    	<a id="refrigerant-button"  data-content="(expansion device system) – meters flow of refrigerant into the evaporator. Should be serviced or replaced when system is opened. <strong>Click again for detail.</strong>" data-toggle="modal" href="#refigerant-modal" rel="popover" title="Refigerant"></a>
+			    	<a class="component-text" id="refrigerant-text"  data-content="(expansion device system) – meters flow of refrigerant into the evaporator. Should be serviced or replaced when system is opened. <strong>Click again for detail.</strong>" data-toggle="modal" href="#refigerant-modal" rel="popover" title="Refigerant">Refigerant<br/><canvas height="200" width="200" id="refrigerant-canvas"/></a>
+
 			    	<a id="lines-button"  data-content="High Pressure A/C lines <strong>Click again for detail.</strong>" data-toggle="modal" href="#lines-modal" rel="popover" title="A/C Lines"></a>
-			    	<a id="lines2-button"  data-content="Low Pressure A/C lines <strong>Click again for detail.</strong>" data-toggle="modal" href="#lines-modal" rel="popover" title="A/C Lines"><span>A/C lines</span></a>		    	
+
+			    	<a id="lines2-button"  data-content="Low Pressure A/C lines <strong>Click again for detail.</strong>" data-toggle="modal" href="#lines-modal" rel="popover" title="A/C Lines"></a>		    	
+			    	<a class="component-text" id="lines2-text"  data-content="Low Pressure A/C lines <strong>Click again for detail.</strong>" data-toggle="modal" href="#lines-modal" rel="popover" title="A/C Lines">A/C lines<br/><canvas height="200" width="200" id="lines2-canvas"/></a>		    	
 			    	<div class="modal fade hide" id="evaporator-modal">
 					  <div class="modal-header">
 					    <button class="close" data-dismiss="modal">×</button>
 					    <h3>Evaporator</h3>
-					    <p>removes heat from vehicle cabin and blows cold air in. Can be expensive to replace often resulting in high labor costs.</p>
 					  </div>
 					  <div class="modal-body">
 					  	<div class="tabbable"> <!-- Only required for left/right tabs -->
@@ -130,7 +142,6 @@
 					  <div class="modal-header">
 					    <button class="close" data-dismiss="modal">×</button>
 					    <h3>Accumulator</h3>
-					    <p>contains desiccant crystals. Primary function is to remove moisture from A/C system. Should be replaced whenever the system is opened.</p>
 					  </div>
 					  <div class="modal-body">
 					  	<h4>No Products</h4>
@@ -144,7 +155,6 @@
 					  <div class="modal-header">
 					    <button class="close" data-dismiss="modal">×</button>
 					    <h3>Compressor</h3>
-					    <p> the heart of the A/C system. #1 cause of compressor failure is lack of lubrication.</p>
 					  </div>
 					  <div class="modal-body">
 					  	
@@ -193,7 +203,6 @@
 					  <div class="modal-header">
 					    <button class="close" data-dismiss="modal">×</button>
 					    <h3>Condenser</h3>
-					    <p>operates under high pressure and dispenses heat out of A/C system into the atmosphere.</p>
 					  </div>
 					  <div class="modal-body">
 
@@ -251,7 +260,6 @@
 					  <div class="modal-header">
 					    <button class="close" data-dismiss="modal">×</button>
 					    <h3>Orifice Tube</h3>
-					    <p>(orifice tube system) – meters flow of refrigerant into the evaporator. Should be replaced when system is opened.</p>
 					  </div>
 					  <div class="modal-body">
 					  	<div class="tabbable"> <!-- Only required for left/right tabs -->
@@ -374,7 +382,6 @@
 					    <h3>Refigerant</h3>
 					  </div>
 					  <div class="modal-body">
-					    <p>(expansion device system) – meters flow of refrigerant into the evaporator. Should be serviced or replaced when system is opened.</p>
 					  </div>
 					  <div class="modal-footer">
 					    <a href="#" class="btn" data-dismiss="modal">Close</a>
@@ -397,18 +404,21 @@
 	    <!-- Placed at the end of the document so the pages load faster -->
 	    <script src="/assets/js/jquery.js"></script>
 	    <script src="/assets/js/bootstrap-transition.js"></script>
-	    <script src="/assets/js/bootstrap-alert.js"></script>
 	    <script src="/assets/js/bootstrap-modal.js"></script>
-	    <script src="/assets/js/bootstrap-dropdown.js"></script>
-	    <script src="/assets/js/bootstrap-scrollspy.js"></script>
 	    <script src="/assets/js/bootstrap-tab.js"></script>
+	    <script src="/assets/js/bootstrap-button.js"></script>
 	    <script src="/assets/js/bootstrap-tooltip.js"></script>
 	    <script src="/assets/js/bootstrap-popover.js"></script>
-	    <script src="/assets/js/bootstrap-button.js"></script>
-	    <script src="/assets/js/bootstrap-collapse.js"></script>
-	    <script src="/assets/js/bootstrap-carousel.js"></script>
-	    <script src="/assets/js/bootstrap-typeahead.js"></script>
 	    <script src="/assets/js/jquery-ui.min.js"></script>
 	    <script src="/assets/js/site.js"></script>
+	    <script src="/assets/js/arrow.js"></script>
+	    <!--[if IE]><script type="text/javascript" src="excanvas.js"></script><![endif]-->
+	    <!-- Unused
+	    <script src="/assets/js/bootstrap-dropdown.js"></script>
+	    <script src="/assets/js/bootstrap-alert.js"></script>
+	    <script src="/assets/js/bootstrap-scrollspy.js"></script>
+	    <script src="/assets/js/bootstrap-collapse.js"></script>
+	    <script src="/assets/js/bootstrap-carousel.js"></script>
+	    <script src="/assets/js/bootstrap-typeahead.js"></script> -->
 	  </body>
 	</html>
