@@ -7364,6 +7364,10 @@ a[rel="popover"] {
   height: 100px;
   position: absolute;
 }
+a[rel="popover"] span {
+  position: absolute;
+  display: block;
+}
 #content .modal {
   top: 50%;
   left: 58%;
@@ -7386,11 +7390,20 @@ a[rel="popover"] {
   height: 160px;
   width: 160px;
 }
+#evaporator-button span {
+  top: -50px;
+  left: 70px;
+}
 #accumulator-button {
   top: 25%;
   left: 55%;
   width: 5%;
   height: 110px;
+  z-index: 9;
+}
+#accumulator-button span {
+  top: -80px;
+  left: -85px;
 }
 #compressor-button {
   top: 40%;
@@ -7398,20 +7411,39 @@ a[rel="popover"] {
   height: 120px;
   width: 150px;
 }
+#compressor-button span {
+  top: -35px;
+  left: -25px;
+}
 #condenser-button {
   top: 40%;
   left: 12%;
   height: 280px;
   width: 150px;
 }
+#condenser-button span {
+  top: -70px;
+}
 #orifice-button {
   top: 39%;
   left: 61%;
   height: 60px;
 }
-#expansion-button {
-  top: 35%;
-  left: 55%;
+#orifice-button span {
+  bottom: 0px;
+  left: 100px;
+  width: 200px;
+}
+#refrigerant-button {
+  top: 28%;
+  left: 59%;
+  height: 30px;
+  width: 30px;
+  z-index: 10;
+}
+#refrigerant-button span {
+  top: -10px;
+  left: 220px;
 }
 #lines-button {
   top: 55%;
@@ -7428,6 +7460,10 @@ a[rel="popover"] {
   width: 5%;
   background-color: transparent;
   border: 0px;
+}
+#lines2-button span {
+  top: 110px;
+  left: 50px;
 }
 #leak {
   top: 44%;

@@ -16,4 +16,5 @@ $(document).ready(function() {
 		target = $(this).attr('data-target');
 		$('#' + target).show();
 	});
+	$('.modal').draggable();
 });
