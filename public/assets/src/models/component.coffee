@@ -1,6 +1,10 @@
 class window.Component extends Backbone.Model
 	products: new Products
 	defaults: 
-		description: ''
+		category: ''
+		description: []
 		name: ''
-		locale: 'en'
+		shown: true
+		id: ''
+	initialize: ->
+		@set 'id':@name
