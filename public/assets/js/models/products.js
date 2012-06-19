@@ -13,6 +13,10 @@
 
     Products.prototype.model = Product;
 
+    Products.prototype.local = function() {
+      return !window.navigator.onLine;
+    };
+
     Products.prototype.initialize = function(url, locale) {
       return this.url = 'http://www.supercool.ac/' + locale + '/products/components-' + url + '/?json&callback=?';
     };
