@@ -12,16 +12,12 @@
     }
 
     Product.prototype.defaults = function() {
-      ({
-        sku: '',
-        title: ''
-      });
-      short - {
-        title: ''
-      };
       return {
+        sku: '',
+        title: '',
+        short: '',
         image: '',
-        description: ''
+        info: ''
       };
     };
 

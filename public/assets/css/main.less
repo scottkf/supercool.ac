@@ -2,6 +2,15 @@
 @import 'responsive';
 
 
+body {
+	position: relative;
+}
+
+#language-toggle {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
 body.development {
 	a[rel="popover"] {
 		background-color: rgba(255,255,255,0.7);
@@ -24,7 +33,7 @@ a.component-text {
 	height: auto;
 	width: auto;
 }
-#content .modal {
+.modal {
 	top: 50%;
 	left:58%;
 	width:480px;
@@ -82,23 +91,15 @@ a.component-text {
 	top:33%;
 	left:12%;
 }
-#orifice-button {
+#orifice-tube-txv-button {
 	top:39%;
 	left:61%;
 	height:60px;
 }
-#orifice-text {
+#orifice-tube-txv-text {
 	top:46%;
 	left:70%;
 	
-}
-canvas {
-  display: none;
-}
-#orifice-canvas {
-	top:3px;
-	left:-50px;
-	position:absolute;
 }
 
 #refrigerant-button {
@@ -106,11 +107,6 @@ canvas {
 	left:59%;
 	height: 30px;
 	width: 30px;
-}
-#refrigerant-canvas {
-	position:absolute;
-	left:-200px;
-	top: -10px;
 }
 #refrigerant-text {
 	top:24%;
@@ -123,7 +119,7 @@ canvas {
 	background-color: transparent;
 	border:0px;
 }
-#lines2-button {
+#ac-lines-button {
 	top:28%;
 	left:47%;
 	height:120px;
@@ -132,7 +128,7 @@ canvas {
 	background-color: transparent;
 	border:0px;
 }
-#lines2-text {
+#ac-lines-text {
 	top:40%;
 	left:51%;	
 }
@@ -164,7 +160,7 @@ canvas {
 		height:100px;
 		width:50px;
 	}
-	#orifice-button {
+	#orifice-tube-txv-button {
 		
 	}
 	#expansion-button {
@@ -185,7 +181,7 @@ canvas {
 	#refrigerant-text {
 	  top: 26%;
 	}
-	#content .modal {
+	.modal {
 		width: 340px;
 	}
 	#evaporator-text {
@@ -209,11 +205,11 @@ canvas {
 		height:190px;
 		width:105px;
 	}
-	#orifice-text {
+	#orifice-tube-txv-text {
 	  top: 47%;
 	  width: 200px;
 	}
-	#orifice-button {
+	#orifice-tube-txv-button{
 		top:41%;
 		height:40px;
 	}
@@ -230,7 +226,7 @@ canvas {
 }
 
 @media (min-width: 980px) and (max-width: 1199px) {
-	#content .modal {
+	.modal {
 		width: 400px;
 	}
 	a[rel="popover"] {

@@ -1,37 +1,48 @@
-window.ComponentsViewModel = () ->
-	@href = 'url'
-	@components = []
-	@components.push new Component
-		name: 'Evaporator'
-		category: 'evaporator'
-		description: 'removes heat from vehicle cabin and blows cold air in. Can be expensive to replace often resulting in high labor costs'
+ProductViewModel = (model) ->
+	@sku = model.attributes.sku
+	@href = '#' + model.attributes.sku
+	@id = model.cid
+	@description = model.attributes.info
+	# ko.computed(=>
+	# 	console.log model.attributes.description 	
+	# 	kb.locale_change_observable()
+	# 	model.attributes.description)
+	@image = model.attributes.image
+	@short = model.attributes.short
+	@title = model.attributes.title
+	# @title = kb.observable(model, 'title')
+	# ko.computed( =>
+	#	 kb.locale_change_observable()
+	# 	 model.attributes.title)
+	@
 
-	@components.push new Component
-		name: 'Accumulator / Receiver Dryer'
-		category: 'accumulator'
-		description: 'contains desiccant crystals. Primary function is to remove moisture from A/C system. Should be replaced whenever the system is opened'
-	@components.push new Component
-		name: 'Compressor'
-		category: 'compressor'
-		description: 'the heart of the A/C system. #1 cause of compressor failure is lack of lubrication'
-	@components.push new Component
-		name: 'A/C Lines'
-		category: 'ac-lines'
-		description: 'High Pressure A/C lines'
-	@components.push new Component
-		name: 'A/C Lines'
-		category: 'ac-lines'
-		description: 'Low Pressure A/C lines'
-		shown: false
-	@components.push new Component
-		name: 'Condenser'
-		category: 'condenser'
-		description: 'operates under high pressure and dispenses heat out of A/C system into the atmosphere'
-	@components.push new Component
-		name: 'Refrigerant'
-		category: 'refrigerant'
-		description: '(expansion device system) – meters flow of refrigerant into the evaporator. Should be serviced or replaced when system is opened'
-	@components.push new Component
-		name: 'Orifice / TXV'
-		category: 'orifice-tube-txv'
-		description: '(orifice tube system) – meters flow of refrigerant into the evaporator. Should be replaced when system is opened.'	
+ComponentViewModel = (model) ->
+	@category = model.attributes.category
+	@description = ko.computed(=> 	
+		kb.locale_change_observable()
+		model.attributes.description[kb.locale_manager.getLocale()])
+	@href = if model.attributes.href then model.attributes.href else '#' + model.attributes.category + '-modal'
+	@name = model.attributes.name
+	@id_button = model.attributes.category + '-button'
+	@id_text = model.attributes.category + '-text'
+	@modal = model.attributes.category + '-modal'
+	@shown = model.attributes.shown
+	@products = kb.collectionObservable(model.products, {view_model: ProductViewModel})
+	# model.products = new Products(@category, kb.locale_manager.localeToURL(kb.locale_manager.getLocale()))
+	# model.products.fetch() if @shown
+	# @products.collection(model.products)
+	model.bind 'change', => 
+		model.products = new Products(@category, kb.locale_manager.localeToURL(kb.locale_manager.getLocale()))
+		model.products.fetch() if @shown
+		@products.collection(model.products)
+		@products.valueHasMutated()
+	# product = ko.computed(=>
+	# 	kb.locale_change_observable()
+	# 	@products.collection(new Products(@category, kb.locale_manager.localeToURL(kb.locale_manager.getLocale())))
+	# 	@products.collection().fetch()
+	# 	)
+	@
+	
+window.ComponentsViewModel = (components) ->
+	@components = kb.collectionObservable(components, {view_model: ComponentViewModel})
+	@

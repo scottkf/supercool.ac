@@ -13,6 +13,8 @@
 
     Components.prototype.local = true;
 
+    Components.prototype.url = 'components/';
+
     Components.prototype.model = Component;
 
     return Components;

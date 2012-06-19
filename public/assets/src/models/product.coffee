@@ -2,6 +2,6 @@ class window.Product extends Backbone.Model
 	defaults: ->
 		sku: ''
 		title: ''
-		short-title: ''
+		short: ''
 		image: ''
-		description: ''
+		info: ''

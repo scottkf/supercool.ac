@@ -11,9 +11,11 @@
       return Products.__super__.constructor.apply(this, arguments);
     }
 
-    Products.prototype.local = true;
-
     Products.prototype.model = Product;
+
+    Products.prototype.initialize = function(url, locale) {
+      return this.url = 'http://www.supercool.ac/' + locale + '/products/components-' + url + '/?json&callback=?';
+    };
 
     return Products;
 

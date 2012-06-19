@@ -11,20 +11,17 @@
       return Component.__super__.constructor.apply(this, arguments);
     }
 
+    Component.prototype.local = true;
+
+    Component.prototype.url = 'components/';
+
     Component.prototype.products = new Products;
 
     Component.prototype.defaults = {
       category: '',
       description: [],
       name: '',
-      shown: true,
-      id: ''
-    };
-
-    Component.prototype.initialize = function() {
-      return this.set({
-        'id': this.name
-      });
+      shown: true
     };
 
     return Component;
