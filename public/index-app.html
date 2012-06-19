@@ -40,7 +40,9 @@
     		<div id="standard-group" class="vehicle-group">
 		    	<img src="assets/img/standard-car.jpg" />
 		    	<!-- ko foreach: components -->
-		    	<a data-toggle="modal" rel="popover" data-bind="attr: {id: category, 'data-content': description[locale], title:name, href:href}" >
+		    	<a data-toggle="modal" rel="popover" data-bind="attr: {id: category, 'data-content': description, title:name, href:href}" >
+			    <a class="component-text" id="evaporator-text" data-content="removes heat from vehicle cabin and blows cold air in. Can be expensive to replace often resulting in high labor costs. <strong>Click again for detail.</strong>" data-toggle="modal" title="Evaporator" rel="popover" href="#evaporator-modal">Evaporator<br/><canvas height="200" width="200" id="evaporator-canvas"/></a>
+			
 		    	</a>
 		    	<!-- /ko -->
     		</div>
@@ -75,6 +77,7 @@
 	<script src="assets/js/models/products.js"></script>
 	<script src="assets/js/models/component.js"></script>
 	<script src="assets/js/models/components.js"></script>
+	<script src="assets/js/viewmodels/components.js"></script>
 	<!--
 	<script src="assets/js/viewmodels/settings.js"></script>
 	<script src="assets/js/viewmodels/header.js"></script>
