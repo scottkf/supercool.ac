@@ -79,8 +79,8 @@
           <div class="tab-content span3" data-bind="foreach: products">
             <div class="tab-pane" data-bind="css: {active: $index() == 0}, attr: {id: sku + id}">
                 <img class="product-image" data-bind="attr: {src: image}">
-                <p class="description" data-bind="html: description"></p>
-                <p class="sku" data-bind="text: href"></p>
+                <div class="description" data-bind="html: description"></div>
+                <div class="sku" data-bind="text: href"></div>
             </div>
           </div>
         </div>
