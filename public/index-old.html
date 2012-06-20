@@ -1,0 +1,430 @@
+	<!DOCTYPE html>
+	<html lang="en">
+	  <head>
+	    <meta charset="utf-8">
+	    <title>SuperCool.ac</title>
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <meta name="description" content="">
+	    <meta name="author" content="">
+	    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+	    <!-- Le styles -->
+		<link rel="stylesheet" type="text/css" href="/assets/css/main.css" />
+	    <!-- <link rel="stylesheet/less" href="/assets/css/bootstrap.less">
+	    <link rel="stylesheet/less" href="/assets/css/main.less"> 
+	    <link href="/assets/css/responsive.less" rel="stylesheet/less">
+		<script src="/assets/js/less.js"></script> -->
+
+	    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+	    <!--[if lt IE 9]>
+	      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	    <![endif]-->
+
+	    <!-- Le fav and touch icons -->
+	    <link rel="shortcut icon" href="/assets/ico/favicon.ico">
+	    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/ico/apple-touch-icon-144-precomposed.png">
+	    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/ico/apple-touch-icon-114-precomposed.png">
+	    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/ico/apple-touch-icon-72-precomposed.png">
+	    <link rel="apple-touch-icon-precomposed" href="/assets/ico/apple-touch-icon-57-precomposed.png">
+
+	  </head>
+
+	  <body class="production">
+	    <div class="container">
+	    	<div id="content">
+	   			<h4>Views</h4>
+		    	<div class="btn-group" id="vehicle-toggle" data-toggle="buttons-radio">
+	                <button data-target="standard-group" class="btn btn-primary active">Standard Vehicle</button>
+	                <button data-target="hybrid-group" class="btn btn-primary">Hybrid Vehicle</button>
+	                <button data-target="interior-group" class="btn btn-primary">Interior</button>
+	            </div>
+	    		<div id="standard-group" class="vehicle-group">
+			    	<img src="/assets/img/standard-car.jpg" />
+			    	<a id="evaporator-button"  data-content="removes heat from vehicle cabin and blows cold air in. Can be expensive to replace often resulting in high labor costs. <strong>Click again for detail.</strong>" data-toggle="modal" title="Evaporator" rel="popover" href="#evaporator-modal" ></a>
+			    	
+			    	<a class="component-text" id="evaporator-text" data-content="removes heat from vehicle cabin and blows cold air in. Can be expensive to replace often resulting in high labor costs. <strong>Click again for detail.</strong>" data-toggle="modal" title="Evaporator" rel="popover" href="#evaporator-modal">Evaporator<br/><canvas height="200" width="200" id="evaporator-canvas"/></a>
+
+			    	<a id="accumulator-button"  data-content="contains desiccant crystals. Primary function is to remove moisture from A/C system. Should be replaced whenever the system is opened. <strong>Click again for detail.</strong>" data-toggle="modal" title="Accumulator / Receiver Dryer" rel="popover" href="#accumulator-modal" ></a>
+			    	<a class="component-text" id="accumulator-text"  data-content="contains desiccant crystals. Primary function is to remove moisture from A/C system. Should be replaced whenever the system is opened. <strong>Click again for detail.</strong>" data-toggle="modal" title="Accumulator / Receiver Dryer" rel="popover" href="#accumulator-modal" >Accumlator / <br/>Receiver Dryer<br/><canvas height="200" width="200" id="accumulator-canvas"/></a>	  
+			    	  	
+			    	<a id="compressor-button"  data-content="the heart of the A/C system. #1 cause of compressor failure is lack of lubrication. <strong>Click again for detail.</strong>" data-toggle="modal" title="Compressor" rel="popover" href="#compressor-modal" ></a>
+			    	<a class="component-text" id="compressor-text"  data-content="the heart of the A/C system. #1 cause of compressor failure is lack of lubrication. <strong>Click again for detail.</strong>" data-toggle="modal" title="Compressor" rel="popover" href="#compressor-modal" >Compressor<br/><canvas height="200" width="200" id="compressor-canvas"/></a>
+
+			    	<a id="condenser-button"  data-content="operates under high pressure and dispenses heat out of A/C system into the atmosphere. <strong>Click again for detail.</strong>" data-toggle="modal" title="Condenser" rel="popover" href="#condenser-modal" ></a>
+			    	<a class="component-text" id="condenser-text"  data-content="operates under high pressure and dispenses heat out of A/C system into the atmosphere. <strong>Click again for detail.</strong>" data-toggle="modal" title="Condenser" rel="popover" href="#condenser-modal" >Condenser<br/><canvas height="200" width="200" id="condenser-canvas"/></a>
+
+			    	<a id="orifice-button"  data-content="(orifice tube system) – meters flow of refrigerant into the evaporator. Should be replaced when system is opened. <strong>Click again for detail.</strong>" data-toggle="modal" title="Orifice tube" rel="popover" href="#orifice-modal" ></a>
+			    	<a class="component-text" id="orifice-text"  data-content="(orifice tube system) – meters flow of refrigerant into the evaporator. Should be replaced when system is opened. <strong>Click again for detail.</strong>" data-toggle="modal" title="Orifice tube" rel="popover" href="#orifice-modal" >Orifice Tube / TVX<br /><canvas height="200" width="200" id="orifice-canvas"></a>
+
+			    	<a id="refrigerant-button"  data-content="(expansion device system) – meters flow of refrigerant into the evaporator. Should be serviced or replaced when system is opened. <strong>Click again for detail.</strong>" data-toggle="modal" href="#refigerant-modal" rel="popover" title="Refigerant"></a>
+			    	<a class="component-text" id="refrigerant-text"  data-content="(expansion device system) – meters flow of refrigerant into the evaporator. Should be serviced or replaced when system is opened. <strong>Click again for detail.</strong>" data-toggle="modal" href="#refigerant-modal" rel="popover" title="Refigerant">Refigerant<br/><canvas height="200" width="200" id="refrigerant-canvas"/></a>
+
+			    	<a id="lines-button"  data-content="High Pressure A/C lines <strong>Click again for detail.</strong>" data-toggle="modal" href="#lines-modal" rel="popover" title="A/C Lines"></a>
+
+			    	<a id="lines2-button"  data-content="Low Pressure A/C lines <strong>Click again for detail.</strong>" data-toggle="modal" href="#lines-modal" rel="popover" title="A/C Lines"></a>		    	
+			    	<a class="component-text" id="lines2-text"  data-content="Low Pressure A/C lines <strong>Click again for detail.</strong>" data-toggle="modal" href="#lines-modal" rel="popover" title="A/C Lines">A/C lines<br/><canvas height="200" width="200" id="lines2-canvas"/></a>		    	
+			    	<div class="modal fade hide" id="evaporator-modal">
+					  <div class="modal-header">
+					    <button class="close" data-dismiss="modal">×</button>
+					    <h3>Evaporator</h3>
+					  </div>
+					  <div class="modal-body">
+					  	<div class="tabbable row"> <!-- Only required for left/right tabs -->
+						  <ul class="nav nav-tabs nav-stacked span2">
+						    <li class="active"><a href="#22878" data-toggle="tab">HFC Free Total Leak Stop</a></li>
+						    <li><a href="#d8" data-toggle="tab">U/V Leak Detection Dye</a></li>
+						    <li><a href="#efg" data-toggle="tab">A/C Flush</a></li>
+						    <li><a href="#6984" data-toggle="tab">Evaporator Cleaner</a></li>
+						    <li><a href="#24278" data-toggle="tab">Refrigerant</a></li>
+						  </ul>
+						  <div class="tab-content span2">
+						  	<div class="tab-pane" id="6984"><div class="product-image">
+											<a rel="Evaporator Cleaner and Deodorizer, 17 oz." class="thickbox preview_link" href="http://www.supercool.ac/wp-content/uploads/2011/10/6984.png"> <img class="product_image" id="product_image_1447" alt="Evaporator Cleaner and Deodorizer, 17 oz." title="Evaporator Cleaner and Deodorizer, 17 oz." src="http://www.supercool.ac/wp-content/uploads/2011/10/6984-164x182.png"> </a>
+															</div>
+								<div class="product-info">
+								<h4><a class="wpsc_product_title" href="http://www.supercool.ac/products/automotive-products/evaporator-cleaner-and-deodorizer-17-oz/">Evaporator Cleaner and Deodorizer, 17 oz.</a></h3>
+								<p class="part-number">Part # 6984</p>
+								<p class="product-desc"> Evaporator Cleaner and Deodorizer, 17 oz. </p>
+								<p><a class="readmore" href="http://www.supercool.ac/products/automotive-products/evaporator-cleaner-and-deodorizer-17-oz/">Read more</a></p>
+								<p></p></div>
+						  	</div>
+						  	<div class="tab-pane" id="24278"><div class="product-image">
+											<a rel="Refrigerant Plus 19 oz." class="thickbox preview_link" href="http://www.supercool.ac/wp-content/uploads/2011/10/24278.png"> <img class="product_image" id="product_image_1299" alt="Refrigerant Plus 19 oz." title="Refrigerant Plus 19 oz." src="http://www.supercool.ac/wp-content/uploads/2011/10/24278-164x182.png"> </a>
+															</div><div class="product-info">
+								<h4><a class="wpsc_product_title" href="http://www.supercool.ac/products/automotive-products/refrigerant-plus-19-oz/">Refrigerant Plus 19 oz.</a></h3>
+								<p class="part-number">Part # 24278</p>
+								<p class="product-desc"> Refrigerant Plus 19 oz. </p>
+								<p><a class="readmore" href="http://www.supercool.ac/products/automotive-products/refrigerant-plus-19-oz/">Read more</a></p>
+								<p></p></div>
+						  	
+						  	</div>
+						  	<div class="tab-pane" id="efg">
+								<div class="product-image">
+											<a rel="Extra Flush Gallon" class="thickbox preview_link" href="http://www.supercool.ac/wp-content/uploads/2011/10/EFG.png"> <img class="product_image" id="product_image_1453" alt="Extra Flush Gallon" title="Extra Flush Gallon" src="http://www.supercool.ac/wp-content/uploads/2011/10/EFG-164x182.png"> </a>
+								</div>
+								<div class="product-info">
+									<h4><a class="wpsc_product_title" href="http://www.supercool.ac/products/ac-flush-flush-tools/extra-flush-gallon/">Extra Flush Gallon</a></h3>
+									<p class="part-number">Part # EFG</p>
+									<p class="product-desc"> Extra Flush Gallon </p>
+									<p><a class="readmore" href="http://www.supercool.ac/products/ac-flush-flush-tools/extra-flush-gallon/">Read more</a></p>
+									<p></p>
+								</div>
+						  	</div>
+						    <div class="tab-pane active" id="22878">
+						      								<div class="product-image">
+											<a rel="Total Leak Stop Plus U/V Dye HFC-Free Aerosol, 2 oz." class="thickbox preview_link" href="http://www.supercool.ac/wp-content/uploads/2011/10/22878.png"> <img class="product_image" id="product_image_1868" alt="Total Leak Stop Plus U/V Dye HFC-Free Aerosol, 2 oz." title="Total Leak Stop Plus U/V Dye HFC-Free Aerosol, 2 oz." src="http://www.supercool.ac/wp-content/uploads/2011/10/22878-164x182.png"> </a>
+															</div>
+				
+									<div class="product-info">
+						<h4><a class="wpsc_product_title" href="http://www.supercool.ac/products/leak-stop/total-leak-stop-plus-uv-dye-hfc-free-aerosol-2-oz-duplicate/">Total Leak Stop Plus U/V Dye HFC-Free Aerosol, 2 oz.</a></h3>
+												<p class="part-number">Part # 22878</p>
+						<p class="product-desc"> Total Leak Stop Plus U/V Dye HFC-Free Aerosol, 2 oz. </p>
+											<p><a class="readmore" href="http://www.supercool.ac/products/leak-stop/total-leak-stop-plus-uv-dye-hfc-free-aerosol-2-oz-duplicate/">Read more</a></p>
+										</div>
+						    </div>
+						    <div class="tab-pane" id="d8">
+								<div class="product-image">
+																		<a rel="Green A/C U/V Dye Self-Measure bottle treats 32 vehicles 8 oz. (237 ml)" class="thickbox preview_link" href="http://www.supercool.ac/wp-content/uploads/2011/10/D8.png"> <img class="product_image" id="product_image_1395" alt="Green A/C U/V Dye Self-Measure bottle treats 32 vehicles 8 oz. (237 ml)" title="Green A/C U/V Dye Self-Measure bottle treats 32 vehicles 8 oz. (237 ml)" src="http://www.supercool.ac/wp-content/uploads/2011/10/D8-164x182.png"> </a>
+								</div>
+								<div class="product-info">
+									<h4><a class="wpsc_product_title" href="http://www.supercool.ac/products/automotive-products/green-ac-uv-dye-self-measure-bottle-treats-32-vehicles-8-oz-237-ml/">Green A/C U/V Dye Self-Measure bottle treats 32 vehicles 8 oz. (237 ml)</a></h3>
+									<p class="part-number">Part # D8</p>
+									<p class="product-desc"> Green A/C U/V Dye Self-Measure bottle treats 32 vehicles 8 oz. (237 ml) </p>
+									<p><a class="readmore" href="http://www.supercool.ac/products/automotive-products/green-ac-uv-dye-self-measure-bottle-treats-32-vehicles-8-oz-237-ml/">Read more</a></p>
+								</div>
+						    </div>
+						  </div>
+						</div>
+					  </div>
+					  <div class="modal-footer">
+					    <a href="#" class="btn" data-dismiss="modal">Close</a>
+					    
+					  </div>
+					</div>
+			    	<div class="modal fade hide" id="accumulator-modal">
+					  <div class="modal-header">
+					    <button class="close" data-dismiss="modal">×</button>
+					    <h3>Accumulator</h3>
+					  </div>
+					  <div class="modal-body">
+					  	<h4>No Products</h4>
+					  </div>
+					  <div class="modal-footer">
+					    <a href="#" class="btn" data-dismiss="modal">Close</a>
+					    
+					  </div>
+					</div>
+			    	<div class="modal fade hide" id="compressor-modal">
+					  <div class="modal-header">
+					    <button class="close" data-dismiss="modal">×</button>
+					    <h3>Compressor</h3>
+					  </div>
+					  <div class="modal-body">
+					  	
+					  	<div class="tabbable"> <!-- Only required for left/right tabs -->
+						  <ul class="nav nav-tabs nav-stacked">
+						    <li class="active"><a href="#p46-8" data-toggle="tab">PAG 46</a></li>
+						    <li><a href="#p100-8d" data-toggle="tab">PAG 100</a></li>
+						    <li><a href="#P150-8" data-toggle="tab">Evaporator Cleaner and Deodorizer</a></li>
+						  </ul>
+						  <div class="tab-content">
+						  	<div class="tab-pane active" id="p46-8"><div class="product-image">
+										<a rel="PAG 46 Without U/V Dye 8 oz." class="thickbox preview_link" href="http://www.supercool.ac/wp-content/uploads/2011/10/P46-8.png"> <img class="product_image" id="product_image_1325" alt="PAG 46 Without U/V Dye 8 oz." title="PAG 46 Without U/V Dye 8 oz." src="http://www.supercool.ac/wp-content/uploads/2011/10/P46-8-164x182.png"> </a>
+														</div><div class="product-info">
+									<h4><a class="wpsc_product_title" href="http://www.supercool.ac/products/automotive-products/pag-46-without-uv-dye-8-oz/">PAG 46 Without U/V Dye 8 oz.</a></h3>
+									<p class="part-number">Part # P46-8</p>
+									<p class="product-desc"> PAG 46 Without U/V Dye 8 oz. </p>
+									<p><a class="readmore" href="http://www.supercool.ac/products/automotive-products/pag-46-without-uv-dye-8-oz/">Read more</a></p>
+									<p></p></div>
+						  	</div>
+						  	<div class="tab-pane" id="p100-8d"><div class="product-image">
+										<a rel="PAG 100 Without U/V Dye 8 oz." class="thickbox preview_link" href="http://www.supercool.ac/wp-content/uploads/2011/10/P100-8.png"> <img class="product_image" id="product_image_1333" alt="PAG 100 Without U/V Dye 8 oz." title="PAG 100 Without U/V Dye 8 oz." src="http://www.supercool.ac/wp-content/uploads/2011/10/P100-8-164x182.png"> </a>
+														</div><div class="product-info">
+									<h4><a class="wpsc_product_title" href="http://www.supercool.ac/products/automotive-products/pag-100-without-uv-dye-8-oz/">PAG 100 Without U/V Dye 8 oz.</a></h3>
+									<p class="part-number">Part # P100-8</p>
+									<p class="product-desc"> PAG 100 Without U/V Dye 8 oz. </p>
+									<p><a class="readmore" href="http://www.supercool.ac/products/automotive-products/pag-100-without-uv-dye-8-oz/">Read more</a></p>
+									<p></p></div>
+						  	</div>
+						  	<div class="tab-pane" id="P150-8"><div class="product-image">
+										<a rel="PAG 150 Without U/V Dye 8 oz." class="thickbox preview_link" href="http://www.supercool.ac/wp-content/uploads/2011/10/P150-8.png"> <img class="product_image" id="product_image_1341" alt="PAG 150 Without U/V Dye 8 oz." title="PAG 150 Without U/V Dye 8 oz." src="http://www.supercool.ac/wp-content/uploads/2011/10/P150-8-164x182.png"> </a>
+														</div><div class="product-info">
+									<h4><a class="wpsc_product_title" href="http://www.supercool.ac/products/automotive-products/pag-150-without-uv-dye-8-oz/">PAG 150 Without U/V Dye 8 oz.</a></h3>
+									<p class="part-number">Part # P150-8</p>
+									<p class="product-desc"> PAG 150 Without U/V Dye 8 oz. </p>
+									<p><a class="readmore" href="http://www.supercool.ac/products/automotive-products/pag-150-without-uv-dye-8-oz/">Read more</a></p>
+									<p></p></div>
+						  	</div>
+					  	</div>
+					  </div>
+					  </div>
+					  <div class="modal-footer">
+					    <a href="#" class="btn" data-dismiss="modal">Close</a>
+					  </div>
+					</div>
+			    	<div class="modal fade hide" id="condenser-modal">
+					  <div class="modal-header">
+					    <button class="close" data-dismiss="modal">×</button>
+					    <h3>Condenser</h3>
+					  </div>
+					  <div class="modal-body">
+
+					  	<div class="tabbable"> <!-- Only required for left/right tabs -->
+						  <ul class="nav nav-tabs nav-stacked">
+						    <li class="active"><a href="#22878-2" data-toggle="tab">Total Leak Stop Plus U/V Dye HFC-Free Aerosol</a></li>
+						    <li><a href="#d8-2" data-toggle="tab">Green A/C U/V Dye Self-Measure</a></li>
+						    <li><a href="#efg-2" data-toggle="tab">Extra Flush Gallon</a></li>
+						  </ul>
+						  <div class="tab-content">
+						  	<div class="tab-pane" id="efg-2">
+								<div class="product-image">
+											<a rel="Extra Flush Gallon" class="thickbox preview_link" href="http://www.supercool.ac/wp-content/uploads/2011/10/EFG.png"> <img class="product_image" id="product_image_1453" alt="Extra Flush Gallon" title="Extra Flush Gallon" src="http://www.supercool.ac/wp-content/uploads/2011/10/EFG-164x182.png"> </a>
+								</div>
+								<div class="product-info">
+									<h4><a class="wpsc_product_title" href="http://www.supercool.ac/products/ac-flush-flush-tools/extra-flush-gallon/">Extra Flush Gallon</a></h3>
+									<p class="part-number">Part # EFG</p>
+									<p class="product-desc"> Extra Flush Gallon </p>
+									<p><a class="readmore" href="http://www.supercool.ac/products/ac-flush-flush-tools/extra-flush-gallon/">Read more</a></p>
+									<p></p>
+								</div>
+						  	</div>
+						    <div class="tab-pane active" id="22878-2">
+						      								<div class="product-image">
+											<a rel="Total Leak Stop Plus U/V Dye HFC-Free Aerosol, 2 oz." class="thickbox preview_link" href="http://www.supercool.ac/wp-content/uploads/2011/10/22878.png"> <img class="product_image" id="product_image_1868" alt="Total Leak Stop Plus U/V Dye HFC-Free Aerosol, 2 oz." title="Total Leak Stop Plus U/V Dye HFC-Free Aerosol, 2 oz." src="http://www.supercool.ac/wp-content/uploads/2011/10/22878-164x182.png"> </a>
+															</div>
+				
+									<div class="product-info">
+						<h4><a class="wpsc_product_title" href="http://www.supercool.ac/products/leak-stop/total-leak-stop-plus-uv-dye-hfc-free-aerosol-2-oz-duplicate/">Total Leak Stop Plus U/V Dye HFC-Free Aerosol, 2 oz.</a></h3>
+												<p class="part-number">Part # 22878</p>
+						<p class="product-desc"> Total Leak Stop Plus U/V Dye HFC-Free Aerosol, 2 oz. </p>
+											<p><a class="readmore" href="http://www.supercool.ac/products/leak-stop/total-leak-stop-plus-uv-dye-hfc-free-aerosol-2-oz-duplicate/">Read more</a></p>
+										</div>
+						    </div>
+						    <div class="tab-pane" id="d8-2">
+								<div class="product-image">
+																		<a rel="Green A/C U/V Dye Self-Measure bottle treats 32 vehicles 8 oz. (237 ml)" class="thickbox preview_link" href="http://www.supercool.ac/wp-content/uploads/2011/10/D8.png"> <img class="product_image" id="product_image_1395" alt="Green A/C U/V Dye Self-Measure bottle treats 32 vehicles 8 oz. (237 ml)" title="Green A/C U/V Dye Self-Measure bottle treats 32 vehicles 8 oz. (237 ml)" src="http://www.supercool.ac/wp-content/uploads/2011/10/D8-164x182.png"> </a>
+								</div>
+								<div class="product-info">
+									<h4><a class="wpsc_product_title" href="http://www.supercool.ac/products/automotive-products/green-ac-uv-dye-self-measure-bottle-treats-32-vehicles-8-oz-237-ml/">Green A/C U/V Dye Self-Measure bottle treats 32 vehicles 8 oz. (237 ml)</a></h3>
+									<p class="part-number">Part # D8</p>
+									<p class="product-desc"> Green A/C U/V Dye Self-Measure bottle treats 32 vehicles 8 oz. (237 ml) </p>
+									<p><a class="readmore" href="http://www.supercool.ac/products/automotive-products/green-ac-uv-dye-self-measure-bottle-treats-32-vehicles-8-oz-237-ml/">Read more</a></p>
+								</div>
+						    </div>
+						  </div>
+					  </div>
+					  </div>
+					  <div class="modal-footer">
+					    <a href="#" class="btn" data-dismiss="modal">Close</a>
+					    
+					  </div>
+					</div>
+			    	<div class="modal fade hide" id="orifice-modal">
+					  <div class="modal-header">
+					    <button class="close" data-dismiss="modal">×</button>
+					    <h3>Orifice Tube</h3>
+					  </div>
+					  <div class="modal-body">
+					  	<div class="tabbable"> <!-- Only required for left/right tabs -->
+						  <ul class="nav nav-tabs nav-stacked">
+						    <li class="active"><a href="#1729" data-toggle="tab">Orifice Tube Assortment </a></li>
+						  </ul>
+						  <div class="tab-content">
+						  	<div class="tab-pane active" id="1729">
+							    <div class="single-product product_view_1509 o-ring-kits-refills group">
+									<div class="product-image">
+											<a rel="Ultimate Orifice Tube 26 Piece Assortment" class="thickbox preview_link" href="http://www.supercool.ac/wp-content/uploads/2011/10/1729.png"> <img class="product_image" id="product_image_1509" alt="Ultimate Orifice Tube 26 Piece Assortment" title="Ultimate Orifice Tube 26 Piece Assortment" src="http://www.supercool.ac/wp-content/uploads/2011/10/1729-164x182.png"> </a>
+									</div>
+									<div class="product-info">
+										<h4><a class="wpsc_product_title" href="http://www.supercool.ac/products/o-ring-kits-refills/ultimate-orifice-tube-26-piece-assortment/">Ultimate Orifice Tube 26 Piece Assortment</a></h3>
+										<p class="part-number">Part # 1729</p>
+										<p class="product-desc"> Ultimate Orifice Tube 26 Piece Assortment
+											<br>For detailed lists of refills, please see our online catalog. 
+										</p>
+										<p><a class="readmore" href="http://www.supercool.ac/products/o-ring-kits-refills/ultimate-orifice-tube-26-piece-assortment/">Read more</a></p>
+									</div>
+					<!--close productcol-->
+								</div>
+							</div>
+						</div>
+						</div>
+					   </div>
+	   				  <div class="modal-footer">
+					    <a href="#" class="btn" data-dismiss="modal">Close</a>
+					    
+					  </div>
+					 </div>
+
+
+			    	<div class="modal fade hide" id="lines-modal">
+					  <div class="modal-header">
+					    <button class="close" data-dismiss="modal">×</button>
+					    <h3>A/C lines</h3>
+					  </div>
+					  <div class="modal-body">
+
+					  	<div class="tabbable"> <!-- Only required for left/right tabs -->
+						  <ul class="nav nav-tabs nav-stacked">
+						    <li class="active"><a href="#22878-3" data-toggle="tab">Total Leak Stop Plus U/V Dye HFC-Free Aerosol</a></li>
+						    <li><a href="#d8-3" data-toggle="tab">Green A/C U/V Dye Self-Measure</a></li>
+						    <li><a href="#efg-3" data-toggle="tab">Extra Flush Gallon</a></li>
+						    <li><a href="#orings" data-toggle="tab">O-Rings</a></li>
+						    <li><a href="#13128" data-toggle="tab">High Side Inline Filter</a></li>
+						  </ul>
+						  <div class="tab-content">
+						  	<div class="tab-pane" id="orings">
+								<div class="product-image">
+										<a rel="OR350 Master O-ring Assortment" class="thickbox preview_link" href="http://www.supercool.ac/wp-content/uploads/2011/10/OR350.png"> <img class="product_image" id="product_image_1505" alt="OR350 Master O-ring Assortment" title="OR350 Master O-ring Assortment" src="http://www.supercool.ac/wp-content/uploads/2011/10/OR350-164x182.png"> </a>
+														</div><div class="product-info">
+					<h4><a class="wpsc_product_title" href="http://www.supercool.ac/products/o-ring-kits-refills/or350-master-o-ring-assortment/">OR350 Master O-ring Assortment</a></h3>
+											<p class="part-number">Part # OR350</p>
+					<p class="product-desc"> OR350 Master O-ring Assortment
+<br>For detailed lists of refills, please see our online catalog. </p>
+										<p><a class="readmore" href="http://www.supercool.ac/products/o-ring-kits-refills/or350-master-o-ring-assortment/">Read more</a></p>
+									</div>						  	
+							</div>
+						  	<div class="tab-pane" id="13128">
+								<div class="product-image">
+														<a rel="Universal High Side In-Line Filter" class="thickbox preview_link" href="http://www.supercool.ac/wp-content/uploads/2011/10/13128.png">
+									<img class="product_image" id="product_image_1485" alt="Universal High Side In-Line Filter" title="Universal High Side In-Line Filter" src="http://www.supercool.ac/wp-content/uploads/2011/10/13128-204x204.png">
+									</a>
+								</div>
+								<div class="product-info">
+									<h4><a class="wpsc_product_title" href="http://www.supercool.ac/products/ac-flush-flush-tools/universal-high-side-in-line-filter/">Universal High Side In-Line Filter</a></h3>
+									<p class="part-number">Part # 13128</p>
+									<p class="product-desc"> Universal High Side In-Line Filter </p>
+									<p><a class="readmore" href="http://www.supercool.ac/products/ac-flush-flush-tools/universal-high-side-in-line-filter/">Read more</a></p>
+									<p></p>
+								</div>
+							</div>
+						  	<div class="tab-pane" id="efg-3">
+								<div class="product-image">
+											<a rel="Extra Flush Gallon" class="thickbox preview_link" href="http://www.supercool.ac/wp-content/uploads/2011/10/EFG.png"> <img class="product_image" id="product_image_1453" alt="Extra Flush Gallon" title="Extra Flush Gallon" src="http://www.supercool.ac/wp-content/uploads/2011/10/EFG-164x182.png"> </a>
+								</div>
+								<div class="product-info">
+									<h4><a class="wpsc_product_title" href="http://www.supercool.ac/products/ac-flush-flush-tools/extra-flush-gallon/">Extra Flush Gallon</a></h3>
+									<p class="part-number">Part # EFG</p>
+									<p class="product-desc"> Extra Flush Gallon </p>
+									<p><a class="readmore" href="http://www.supercool.ac/products/ac-flush-flush-tools/extra-flush-gallon/">Read more</a></p>
+									<p></p>
+								</div>
+						  	</div>
+						    <div class="tab-pane active" id="22878-3">
+						      								<div class="product-image">
+											<a rel="Total Leak Stop Plus U/V Dye HFC-Free Aerosol, 2 oz." class="thickbox preview_link" href="http://www.supercool.ac/wp-content/uploads/2011/10/22878.png"> <img class="product_image" id="product_image_1868" alt="Total Leak Stop Plus U/V Dye HFC-Free Aerosol, 2 oz." title="Total Leak Stop Plus U/V Dye HFC-Free Aerosol, 2 oz." src="http://www.supercool.ac/wp-content/uploads/2011/10/22878-164x182.png"> </a>
+															</div>
+				
+									<div class="product-info">
+						<h4><a class="wpsc_product_title" href="http://www.supercool.ac/products/leak-stop/total-leak-stop-plus-uv-dye-hfc-free-aerosol-2-oz-duplicate/">Total Leak Stop Plus U/V Dye HFC-Free Aerosol, 2 oz.</a></h3>
+												<p class="part-number">Part # 22878</p>
+						<p class="product-desc"> Total Leak Stop Plus U/V Dye HFC-Free Aerosol, 2 oz. </p>
+											<p><a class="readmore" href="http://www.supercool.ac/products/leak-stop/total-leak-stop-plus-uv-dye-hfc-free-aerosol-2-oz-duplicate/">Read more</a></p>
+										</div>
+						    </div>
+						    <div class="tab-pane" id="d8-3">
+								<div class="product-image">
+																		<a rel="Green A/C U/V Dye Self-Measure bottle treats 32 vehicles 8 oz. (237 ml)" class="thickbox preview_link" href="http://www.supercool.ac/wp-content/uploads/2011/10/D8.png"> <img class="product_image" id="product_image_1395" alt="Green A/C U/V Dye Self-Measure bottle treats 32 vehicles 8 oz. (237 ml)" title="Green A/C U/V Dye Self-Measure bottle treats 32 vehicles 8 oz. (237 ml)" src="http://www.supercool.ac/wp-content/uploads/2011/10/D8-164x182.png"> </a>
+								</div>
+								<div class="product-info">
+									<h4><a class="wpsc_product_title" href="http://www.supercool.ac/products/automotive-products/green-ac-uv-dye-self-measure-bottle-treats-32-vehicles-8-oz-237-ml/">Green A/C U/V Dye Self-Measure bottle treats 32 vehicles 8 oz. (237 ml)</a></h3>
+									<p class="part-number">Part # D8</p>
+									<p class="product-desc"> Green A/C U/V Dye Self-Measure bottle treats 32 vehicles 8 oz. (237 ml) </p>
+									<p><a class="readmore" href="http://www.supercool.ac/products/automotive-products/green-ac-uv-dye-self-measure-bottle-treats-32-vehicles-8-oz-237-ml/">Read more</a></p>
+								</div>
+						    </div>
+						  </div>
+					  </div>					  </div>
+					  <div class="modal-footer">
+					    <a href="#" class="btn" data-dismiss="modal">Close</a>
+					    
+					  </div>
+					</div>
+			    	<div class="modal fade hide" id="refigerant-modal">
+					  <div class="modal-header">
+					    <button class="close" data-dismiss="modal">×</button>
+					    <h3>Refigerant</h3>
+					  </div>
+					  <div class="modal-body">
+					  </div>
+					  <div class="modal-footer">
+					    <a href="#" class="btn" data-dismiss="modal">Close</a>
+					    
+					  </div>
+					</div>
+				</div>
+				<div class="hide vehicle-group" id="hybrid-group">
+					<h1>Not implemented.</h1>
+				</div>
+				<div class="hide vehicle-group" id="interior-group" class="vehicle-group">
+					<img src="/assets/img/interior1.jpg" /><br />
+					<img src="/assets/img/interior2.jpg" /><br />
+					<img src="/assets/img/interior3.jpg" /><br />
+				</div>
+	    	</div>
+	    	<div id="unsupported-device">Unsupported Device, sorry. We only support tablets, netbooks, ultrabooks, and computers. No phones.</div>
+	    </div> <!-- /container -->
+
+	    <!-- Le javascript
+	    ================================================== -->
+	    <!-- Placed at the end of the document so the pages load faster -->
+	    <script src="/assets/js/jquery.js"></script>
+	    <script src="/assets/js/bootstrap-transition.js"></script>
+	    <script src="/assets/js/bootstrap-modal.js"></script>
+	    <script src="/assets/js/bootstrap-tab.js"></script>
+	    <script src="/assets/js/bootstrap-button.js"></script>
+	    <script src="/assets/js/bootstrap-tooltip.js"></script>
+	    <script src="/assets/js/bootstrap-popover.js"></script>
+	    <script src="/assets/js/jquery-ui.min.js"></script>
+	    <script src="/assets/js/jquery.ui.touch-punch.min.js"></script>
+	    <script src="/assets/js/site.js"></script>
+	    <!-- <script src="/assets/js/arrow.js"></script> -->
+	    <!--//[if IE]><script type="text/javascript" src="excanvas.js"></script><!//[endif]-->
+	    <!-- Unused
+	    <script src="/assets/js/bootstrap-dropdown.js"></script>
+	    <script src="/assets/js/bootstrap-alert.js"></script>
+	    <script src="/assets/js/bootstrap-scrollspy.js"></script>
+	    <script src="/assets/js/bootstrap-collapse.js"></script>
+	    <script src="/assets/js/bootstrap-carousel.js"></script>
+	    <script src="/assets/js/bootstrap-typeahead.js"></script> -->
+	  </body>
+	</html>
