@@ -5,6 +5,10 @@
     $('a[rel="popover"]').popover({
       template: '<div class="popover"><div class="popover-inner"><h3 class="popover-title"></h3><div class="popover-content"><p></p></div></div></div>'
     });
+    $('.modal').modal({
+      backdrop: false,
+      show: false
+    });
     $('.modal').live('show', function() {
       if (!$(this).hasClass('in')) {
         return $('.modal').modal('hide');

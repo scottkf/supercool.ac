@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" manifest="cache.manifest">
 <head>
     <meta charset="utf-8">
     <title>SuperCool.ac</title>
@@ -64,7 +64,7 @@
 
     <!-- ko foreach: components.components -->
     <!-- ko if: shown -->
-    <div class="modal fade hide" data-show="false" data-backdrop="false" data-bind="attr: {id:modal}">
+    <div class="modal fade hide" data-backdrop="false" data-bind="attr: {id:modal}">
       <div class="modal-header">
         <button class="close" data-dismiss="modal">×</button>
         <h3 data-bind="text: name"></h3>
