@@ -14,5 +14,5 @@ end
 
 get '/cache.manifest' do
   headers 'Content-Type' => 'text/cache-manifest' # Must be served with this MIME type
-  Manifesto.cache :network_includes => ['http://supercool.ac', '*'], :excludes => ['src/', '*.less']
+  Manifesto.cache :network_includes => ['*'], :excludes => ['src/', '*.less'], :timestamp => false
 end
