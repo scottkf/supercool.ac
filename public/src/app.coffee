@@ -76,7 +76,7 @@ $ ->
 
 
 	# Start the app routing
-	new AppRouter()
+	app.router = new AppRouter()
 	Backbone.history.start()
 
 

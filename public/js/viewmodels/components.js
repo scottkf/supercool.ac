@@ -7,7 +7,7 @@
     this.href = '#' + model.attributes.sku;
     this.id = model.cid;
     this.description = model.attributes.info;
-    this.image = model.attributes.image;
+    this.image = window.navigator.onLine ? model.attributes.image : 'img/products/' + this.sku + '.png';
     this.short = model.attributes.short;
     this.title = model.attributes.title;
     return this;
@@ -30,12 +30,8 @@
       view_model: ProductViewModel
     });
     model.bind('change', function() {
-      model.products = new Products(_this.category, kb.locale_manager.localeToURL(kb.locale_manager.getLocale()));
-      if (_this.shown) {
-        model.products.fetch();
-      }
-      _this.products.collection(model.products);
-      return _this.products.valueHasMutated();
+      model.fetchProducts(kb.locale_manager.localeToURL(kb.locale_manager.getLocale()));
+      return _this.products.collection(model.products);
     });
     return this;
   };

@@ -26,7 +26,7 @@
 
     Component.prototype.fetchProducts = function(locale) {
       this.products = new Products(this.attributes.category, locale);
-      if (this.attributes.shown) {
+      if (this.get('shown')) {
         return this.products.fetch();
       }
     };

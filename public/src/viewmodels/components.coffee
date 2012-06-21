@@ -7,7 +7,7 @@ ProductViewModel = (model) ->
 	# 	console.log model.attributes.description 	
 	# 	kb.locale_change_observable()
 	# 	model.attributes.description)
-	@image = model.attributes.image
+	@image = if window.navigator.onLine then model.attributes.image else 'img/products/'+@sku+'.png'
 	@short = model.attributes.short
 	@title = model.attributes.title
 	# @title = kb.observable(model, 'title')
@@ -32,10 +32,8 @@ ComponentViewModel = (model) ->
 	# model.products.fetch() if @shown
 	# @products.collection(model.products)
 	model.bind 'change', => 
-		model.products = new Products(@category, kb.locale_manager.localeToURL(kb.locale_manager.getLocale()))
-		model.products.fetch() if @shown
+		model.fetchProducts(kb.locale_manager.localeToURL(kb.locale_manager.getLocale()))
 		@products.collection(model.products)
-		@products.valueHasMutated()
 	# product = ko.computed(=>
 	# 	kb.locale_change_observable()
 	# 	@products.collection(new Products(@category, kb.locale_manager.localeToURL(kb.locale_manager.getLocale())))

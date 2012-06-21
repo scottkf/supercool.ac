@@ -86,7 +86,7 @@
     ko.applyBindings(app.viewmodels, $('body')[0]);
     app.collections.components.fetch();
     kb.locale_manager.setLocale('en-US');
-    new AppRouter();
+    app.router = new AppRouter();
     return Backbone.history.start();
   });
 

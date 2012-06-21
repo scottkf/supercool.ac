@@ -10,4 +10,4 @@ class window.Component extends Backbone.Model
 
 	fetchProducts: (locale) ->
 		@products = new Products(@attributes.category, locale)
-		@products.fetch() if @attributes.shown
+		@products.fetch() if @get('shown')
