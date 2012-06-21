@@ -75,9 +75,19 @@ $ ->
 	kb.locale_manager.setLocale('en-US')
 
 
+
+
 	# Start the app routing
 	app.router = new AppRouter()
 	Backbone.history.start()
+
+
+	# sync if first visit
+	if localStorage.getItem('visited') == null
+		localStorage.setItem('visited', true)
+		_.delay((->
+			app.router.sync()
+		),10000)
 
 
 	# kb.utils.release(app.viewmodels)		# Destroy when finished with the view model

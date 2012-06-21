@@ -54,6 +54,8 @@ kb.locale_manager = new LocaleManager(null, {
     example: ''
   'it-IT':
     example: ''
+  'de-DE':
+    example: ''
   'ja':
     example: ''
   'pt-PT':

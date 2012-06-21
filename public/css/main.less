@@ -11,6 +11,14 @@ body {
 	top: 0;
 	right: 0;
 }
+
+#animation {
+	top: 41%;
+	position:absolute;
+	left:33%;
+	height:26%;
+}
+
 body.development {
 	a[rel="popover"] {
 		background-color: rgba(255,255,255,0.7);
@@ -72,6 +80,7 @@ a.component-text {
 #accumulator-text {
 	top: 16%;
 	left:47%;
+	width: 150px;
 }
 #compressor-button {
 	top:40%;
@@ -181,6 +190,11 @@ img.product-image {
 
 // Portrait tablet to landscape and desktop
 @media (min-width: 768px) and (max-width: 979px) {
+	#animation {
+		top:43%;
+		left:33%;
+		height:25%;
+	}
 	.tab-content {
 		width: 166px;
 	}
@@ -207,6 +221,9 @@ img.product-image {
 	}
 	#accumulator-button {
 		height:80px;
+	}
+	#accumulator-text {
+		width: 100px;
 	}
 	#compressor-button {
 		height:85px;
@@ -245,6 +262,11 @@ img.product-image {
 		width: 400px;
 		height: 375px;
 		font-size: 12px;
+	}
+	#animation {
+		height: 183px;
+		top:42%;
+		left:33%;
 	}
 	img.product-image {
 		width: 40%;

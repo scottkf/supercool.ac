@@ -87,7 +87,13 @@
     app.collections.components.fetch();
     kb.locale_manager.setLocale('en-US');
     app.router = new AppRouter();
-    return Backbone.history.start();
+    Backbone.history.start();
+    if (localStorage.getItem('visited') === null) {
+      localStorage.setItem('visited', true);
+      return _.delay((function() {
+        return app.router.sync();
+      }), 10000);
+    }
   });
 
 }).call(this);

@@ -96,6 +96,9 @@
     'it-IT': {
       example: ''
     },
+    'de-DE': {
+      example: ''
+    },
     'ja': {
       example: ''
     },
