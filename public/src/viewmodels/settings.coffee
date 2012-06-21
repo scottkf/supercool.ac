@@ -19,4 +19,7 @@ window.SettingsViewModel = (locales) ->
 		write: (new_locale) => kb.locale_manager.setLocale(new_locale); @current_language(new_locale)
 	)
 
+	# EXTENSIONS: Loading notification
+	@syncing = ko.observable(false)
+
 	@

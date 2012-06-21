@@ -29,6 +29,9 @@ class LocaleManager
   localeToURL: (locale) ->
     locale_parts = locale.split('-')
     return locale_parts[0]
+  
+  getLocaleURL: ->
+    @localeToURL(@getLocale())
 
   localeToLabel: (locale) ->
     locale_parts = locale.split('-')

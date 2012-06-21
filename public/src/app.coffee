@@ -76,7 +76,8 @@ $ ->
 
 
 	# Start the app routing
-	# new AppRouter()
-	# Backbone.history.start()
+	new AppRouter()
+	Backbone.history.start()
+
 
 	# kb.utils.release(app.viewmodels)		# Destroy when finished with the view model

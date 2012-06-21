@@ -85,7 +85,9 @@
     app.viewmodels.settings = new SettingsViewModel(kb.locale_manager.getLocales());
     ko.applyBindings(app.viewmodels, $('body')[0]);
     app.collections.components.fetch();
-    return kb.locale_manager.setLocale('en-US');
+    kb.locale_manager.setLocale('en-US');
+    new AppRouter();
+    return Backbone.history.start();
   });
 
 }).call(this);

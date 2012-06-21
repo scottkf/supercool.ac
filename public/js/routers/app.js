@@ -12,7 +12,29 @@
     }
 
     AppRouter.prototype.routes = {
-      "": false
+      "sync": "sync",
+      "": ""
+    };
+
+    AppRouter.prototype.sync = function() {
+      var locale, model, _i, _len, _ref, _results;
+      window.app.viewmodels.settings.syncing(true);
+      _ref = kb.locale_manager.getLocales();
+      _results = [];
+      for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+        locale = _ref[_i];
+        _results.push((function() {
+          var _j, _len1, _ref1, _results1;
+          _ref1 = window.app.viewmodels.components.components.collection().models;
+          _results1 = [];
+          for (_j = 0, _len1 = _ref1.length; _j < _len1; _j++) {
+            model = _ref1[_j];
+            _results1.push(model.fetchProducts(kb.locale_manager.localeToURL(locale)));
+          }
+          return _results1;
+        })());
+      }
+      return _results;
     };
 
     return AppRouter;

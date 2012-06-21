@@ -66,6 +66,10 @@
       return locale_parts[0];
     };
 
+    LocaleManager.prototype.getLocaleURL = function() {
+      return this.localeToURL(this.getLocale());
+    };
+
     LocaleManager.prototype.localeToLabel = function(locale) {
       var locale_parts;
       locale_parts = locale.split('-');

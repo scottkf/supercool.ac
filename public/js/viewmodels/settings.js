@@ -31,6 +31,7 @@
         return _this.current_language(new_locale);
       }
     });
+    this.syncing = ko.observable(false);
     return this;
   };
 

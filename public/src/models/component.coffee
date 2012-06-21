@@ -7,3 +7,7 @@ class window.Component extends Backbone.Model
 		description: []
 		name: ''
 		shown: true
+
+	fetchProducts: (locale) ->
+		@products = new Products(@attributes.category, locale)
+		@products.fetch() if @attributes.shown
