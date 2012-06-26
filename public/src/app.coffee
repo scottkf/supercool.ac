@@ -2,6 +2,20 @@ $ ->
 
 	components = []
 	components.push new Component
+		id: 'leak'
+		name: 'Refrigerant Leak'
+		category: 'ac-lines'
+		href: '#ac-lines-modal'
+		# description: 
+		# 	'en-US': '<li>Heart of A/C System</li><li>Proper OE Lubricant is Important</li><li>#1 Cause of failure is lack of lubrication</li>'
+		# 	'es-ES': '<li>Corazón de un sistema A/C</li><li>Lubricante adecuado OE es Importante</li><li>#1 causa del fracaso es la falta de lubricación</li>'
+		# 	'fr-FR': '<li>Coeur d\'un système A/C</li><li>Lubrifiant approprié OE est importante</li><li>N°1 Cause de l\'échec est un manque de lubrification</li>'
+		# 	'it-IT': '<li>Cuore di un sistema A/C</li><li>OE lubrificante adeguato è importante</li><li>N°1 Causa del fallimento è la mancanza di lubrificazione</li>'
+		# 	'ja':    '<li>A / Cシステムの·ハート</li><li>適切なOEの潤滑が重要である</li><li>障害が発生した·＃1原因は、潤滑の欠如である</li>'
+		# 	'zh-CN': '<li>A / C系统的心脏</li><li>正确的OE润滑油是重要的</li><li>＃1失败的原因是缺乏润滑</li>'
+		# 	'de-DE': '<li>Herz der Klimaanlage</li><li>Richtiger OE Schmierstoff ist wichtig</li><li># 1 Ursache des Fehlers ist der Mangel an Schmierung</li>'
+		# 	'pt-PT': '<li>Coração de um sistema A/C</li><li>Lubrificante OE adequada é importante</li><li>Causa # 1 de fracasso é a falta de lubrificação</li>'
+	components.push new Component
 		id: 'compressor'
 		name: 'Compressor'
 		category: 'compressor'
@@ -60,7 +74,7 @@ $ ->
 		shown: false
 	
 	components.push new Component
-		id: 'low-pressure-lines'
+		id: 'ac-lines'
 		name: 'A/C Lines'
 		category: 'ac-lines'
 		description:
@@ -102,7 +116,7 @@ $ ->
 			'pt-PT': '<li>Instalado através da Porta Baixa Pressão</li>'
 	
 	components.push new Component
-		id: 'orifice-txv'
+		id: 'orifice-tube-txv'
 		name: 'Orifice / TXV'
 		category: 'orifice-tube-txv'
 		description:

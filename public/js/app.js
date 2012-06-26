@@ -5,6 +5,12 @@
     var component, components, _i, _len;
     components = [];
     components.push(new Component({
+      id: 'leak',
+      name: 'Refrigerant Leak',
+      category: 'ac-lines',
+      href: '#ac-lines-modal'
+    }));
+    components.push(new Component({
       id: 'compressor',
       name: 'Compressor',
       category: 'compressor',
@@ -67,7 +73,7 @@
       shown: false
     }));
     components.push(new Component({
-      id: 'low-pressure-lines',
+      id: 'ac-lines',
       name: 'A/C Lines',
       category: 'ac-lines',
       description: {
@@ -112,7 +118,7 @@
       }
     }));
     components.push(new Component({
-      id: 'orifice-txv',
+      id: 'orifice-tube-txv',
       name: 'Orifice / TXV',
       category: 'orifice-tube-txv',
       description: {

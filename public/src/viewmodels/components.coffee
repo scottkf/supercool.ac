@@ -23,8 +23,9 @@ ComponentViewModel = (model) ->
 		model.attributes.description[kb.locale_manager.getLocale()])
 	@href = if model.attributes.href then model.attributes.href else '#' + model.attributes.category + '-modal'
 	@name = model.attributes.name
-	@id_button = model.attributes.category + '-button'
-	@id_text = model.attributes.category + '-text'
+	@id = model.attributes.id
+	@id_button = model.attributes.id + '-button'
+	@id_text = model.attributes.id + '-text'
 	@modal = model.attributes.category + '-modal'
 	@shown = model.attributes.shown
 	@products = kb.collectionObservable(model.products, {view_model: ProductViewModel})
