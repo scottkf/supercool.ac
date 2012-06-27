@@ -1,4 +1,6 @@
 $ ->
+	if window.navigator.onLine
+		localStorage.clear()
 
 	components = []
 	components.push new Component
