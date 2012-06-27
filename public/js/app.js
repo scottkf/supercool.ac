@@ -56,10 +56,11 @@
       }
     }));
     components.push(new Component({
-      id: 'high-pressure-lines',
+      id: 'lines',
       name: 'A/C Lines',
       category: 'lines',
       href: '#ac-lines-modal',
+      shown: false,
       description: {
         'en-US': '<li>High Pressure Lines</li><li>High Side In-line filter can reduce compressor comebacks</li>',
         'es-ES': '<li>Las líneas de alta presión</li><li>Alto secundarios filtro en la vía puede reducir regresos de compresores</li>',
@@ -69,8 +70,7 @@
         'zh-CN': '<li>高低压线路</li><li>高侧线滤波器可以减少压缩机的回击</li>',
         'de-DE': '<li>Hochdruckleitungen</li><li>High-Side-In-Line-Filter reduzieren kann Kompressor Comebacks</li>',
         'pt-PT': '<li>Alta linhas de pressão</li><li>Secundários alta filtro em linha de pode reduzir comebacks compressor</li>'
-      },
-      shown: false
+      }
     }));
     components.push(new Component({
       id: 'ac-lines',
