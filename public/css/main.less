@@ -4,6 +4,17 @@
 
 body {
 	position: relative;
+	&.no-cursor {
+		cursor: none !important;
+		a {
+			cursor: none !important;
+		}
+	}
+}
+#leak-image {
+	position: absolute;
+	left: 0;
+	-webkit-transition: opacity .1s linear;
 }
 
 #language-toggle {
@@ -13,10 +24,21 @@ body {
 }
 
 #animation {
-	top: 41%;
+	top: 30%;
 	position:absolute;
-	left:33%;
-	height:26%;
+	left:34%;
+	height:32%;
+}
+#uv-light {
+	left: 49%;
+	top: 38%;
+	z-index: 20;
+	-webkit-transition: opacity .1s linear;
+	background-image: url(/img/uv-light.png);
+	background-repeat: no-repeat;
+	height: 128px;
+	position: absolute;
+	width: 128px;
 }
 
 body.development {
@@ -201,9 +223,9 @@ img.product-image {
 // Portrait tablet to landscape and desktop
 @media (min-width: 768px) and (max-width: 979px) {
 	#animation {
-		top:43%;
-		left:33%;
-		height:25%;
+		top:32%;
+		left:34%;
+		height:31%;
 	}
 	.tab-content {
 		width: 166px;
@@ -274,9 +296,9 @@ img.product-image {
 		font-size: 12px;
 	}
 	#animation {
-		height: 183px;
-		top:42%;
-		left:33%;
+		height: 230;
+		top:31%;
+		left:34%;
 	}
 	img.product-image {
 		width: 40%;

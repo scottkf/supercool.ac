@@ -1,8 +1,8 @@
 $ ->
 
 	# remove later
-	if window.navigator.onLine
-		localStorage.clear()
+	# if window.navigator.onLine
+	# 	localStorage.clear()
 
 	components = []
 	components.push new Component

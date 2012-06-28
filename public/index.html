@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en" manifest="cache.manifest">
+<!-- <html lang="en"> -->
 <head>
     <meta charset="utf-8">
     <title>SuperCool.ac</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 
     <!-- Le styles -->
 	<link rel="stylesheet" type="text/css" href="css/main.css" />
@@ -29,6 +30,7 @@
 
 </head>
   <body class="production">
+    <div class="hide" id="uv-light" style="opacity:0"></div>
     <div class="container">
     	<div id="content">
    			<h4>Views</h4>
@@ -46,6 +48,7 @@
             </div>
     		<div id="standard-group" class="vehicle-group">
                 <img src="img/lines-animation.gif" id="animation" />
+                <img style="opacity: 0" src="img/leak.png" id="leak-image" />
 		    	<img id="car" src="img/standard-car.jpg" />
 		    	<!-- ko foreach: components.components -->
 		    	<a data-toggle="modal" rel="popover" data-bind="attr: {id:id_button, 'data-content': description, title:name, href:href}"></a>

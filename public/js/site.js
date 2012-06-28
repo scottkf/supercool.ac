@@ -2,12 +2,54 @@
 (function() {
 
   $(function() {
+    var cursor_shown,
+      _this = this;
     $('a[rel="popover"]').popover({
       template: '<div class="popover"><div class="popover-inner"><h3 class="popover-title"></h3><div class="popover-content"><p></p></div></div></div>'
     });
     $('.modal').modal({
       backdrop: false,
       show: false
+    });
+    cursor_shown = false;
+    $('#leak-text').on('touchstart', function(e) {
+      if (cursor_shown === true) {
+        $($('#leak-text').attr('href')).modal('show');
+      }
+      cursor_shown = true;
+      e.stopPropagation();
+      $('#uv-light').css('display', 'block');
+      $('#uv-light').css('opacity', '1');
+      return $('#leak-image').css('opacity', '1');
+    });
+    $('#leak-text').on('click', function(e) {
+      if (cursor_shown === true) {
+        $($('#leak-text').attr('href')).modal('show');
+      }
+      cursor_shown = true;
+      e.stopPropagation();
+      $('body').css('cursor', 'url(/img/uv-light.png) 30 100, default');
+      return $('a').css('cursor', 'url(/img/uv-light.png) 30 100, pointer');
+    });
+    $('body').on('click', function() {
+      cursor_shown = false;
+      $('body').css('cursor', '');
+      $('a').css('cursor', '');
+      $('#leak-image').css('opacity', '0');
+      $('#uv-light').css('opacity', '0');
+      return $('#uv-light').css('display', 'none');
+    });
+    $('#leak-button').on('hover', function() {
+      if (cursor_shown) {
+        if ($('#leak-image').css('opacity') === '0') {
+          $('#leak-image').css('opacity', '1');
+        } else {
+          $('#leak-image').css('opacity', '0');
+        }
+      }
+    });
+    document.body.addEventListener('touchmove', function(event) {
+      return event.preventDefault();
     });
     $('#hybrid-button').on('click', function() {
       $('#car').attr('src', 'img/hybrid-car.jpg');
