@@ -17,6 +17,9 @@
       $('#car').attr('src', 'img/standard-car.jpg');
       return app.viewmodels.components.components.collection().models[1].set('category', 'compressor');
     });
+    $('#interior-button').on('click', function() {
+      return $('.modal').modal('hide');
+    });
     $('.modal').live('show', function() {
       if (!$(this).hasClass('in')) {
         return $('.modal').modal('hide');

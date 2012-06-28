@@ -12,6 +12,8 @@ $ ->
 	$('#standard-button').on 'click', ->
 		$('#car').attr('src', 'img/standard-car.jpg')
 		app.viewmodels.components.components.collection().models[1].set('category', 'compressor')
+	$('#interior-button').on 'click', ->
+		$('.modal').modal('hide')
 	$('.modal').live 'show', ->
 		if (!$(this).hasClass('in'))
 			$('.modal').modal('hide')			
