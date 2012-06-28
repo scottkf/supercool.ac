@@ -9,6 +9,14 @@
       backdrop: false,
       show: false
     });
+    $('#hybrid-button').on('click', function() {
+      $('#car').attr('src', 'img/hybrid-car.jpg');
+      return app.viewmodels.components.components.collection().models[1].set('category', 'hybrid-compressor');
+    });
+    $('#standard-button').on('click', function() {
+      $('#car').attr('src', 'img/standard-car.jpg');
+      return app.viewmodels.components.components.collection().models[1].set('category', 'compressor');
+    });
     $('.modal').live('show', function() {
       if (!$(this).hasClass('in')) {
         return $('.modal').modal('hide');

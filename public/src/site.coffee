@@ -6,6 +6,12 @@ $ ->
 		backdrop:false,
 		show:false,
 	})
+	$('#hybrid-button').on 'click', ->
+		$('#car').attr('src', 'img/hybrid-car.jpg')
+		app.viewmodels.components.components.collection().models[1].set('category', 'hybrid-compressor')
+	$('#standard-button').on 'click', ->
+		$('#car').attr('src', 'img/standard-car.jpg')
+		app.viewmodels.components.components.collection().models[1].set('category', 'compressor')
 	$('.modal').live 'show', ->
 		if (!$(this).hasClass('in'))
 			$('.modal').modal('hide')			

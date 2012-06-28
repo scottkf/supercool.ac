@@ -1,4 +1,6 @@
 $ ->
+
+	# remove later
 	if window.navigator.onLine
 		localStorage.clear()
 

@@ -3,6 +3,9 @@
 
   $(function() {
     var component, components, _i, _len;
+    if (window.navigator.onLine) {
+      localStorage.clear();
+    }
     components = [];
     components.push(new Component({
       id: 'leak',
