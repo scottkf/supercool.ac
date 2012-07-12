@@ -67,8 +67,9 @@
     <!-- ko if: shown -->
     <div class="modal fade hide" data-backdrop="false" data-bind="attr: {id:modal}">
       <div class="modal-header">
-        <button class="close" data-dismiss="modal">×</button>
-        <h3 data-bind="text: name"></h3>
+        <a href="#" class="btn close" data-dismiss="modal">Close</a>
+        <!-- <button class="close" data-dismiss="modal">×</button> -->
+        <h4 data-bind="text: name"></h4>
       </div>
       <div class="modal-body">
         <div class="tabbable row">
@@ -81,12 +82,12 @@
             <div class="tab-pane" data-bind="css: {active: $index() == 0}, attr: {id: sku + id}">
                 <img class="product-image" data-bind="attr: {src: image}">
                 <div class="description" data-bind="html: description"></div>
-                <div class="sku" data-bind="text: href"></div>
+                <!-- <div class="sku" data-bind="text: href"></div> -->
             </div>
           </div>
         </div>
       </div>
-      <div class="modal-footer">
+      <div class="modal-footer" style="display:none">
         <a href="#" class="btn" data-dismiss="modal">Close</a>
       </div>
     </div>    

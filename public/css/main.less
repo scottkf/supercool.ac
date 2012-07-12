@@ -22,6 +22,14 @@ body {
 	top: 0;
 	right: 0;
 }
+.tabbable {
+	.span2 {
+		margin-left: 0px !important;
+	}
+	.span3 {
+		margin-left: 0px;
+	}
+}
 
 #animation {
 	top: 30%;
@@ -67,8 +75,12 @@ a.component-text {
 	top: 50%;
 	left:58%;
 	width:480px;
-	position: absolute;
+	overflow:hidden;
+	position: absolute !important;
 	margin: 0px;
+	.modal-body {
+		width: 100%;
+	}
 }
 .popover {
 	top: 6% !important;
@@ -76,8 +88,12 @@ a.component-text {
 	margin-left: 0px !important;
 	padding: 0px !important;
 }
+.tab-pane {
+/*	overflow: scroll;
+	-webkit-overflow-scrolling: touch;
+*/}
 .tab-content {
-	width: 200px;
+	width: 220px;
 }
 #unsupported-device {
 	display: none;
@@ -177,6 +193,7 @@ a.component-text {
 }
 
 img.product-image {
+	float: right;
 }
 
 #content {
@@ -226,9 +243,6 @@ img.product-image {
 		top:32%;
 		left:34%;
 		height:31%;
-	}
-	.tab-content {
-		width: 166px;
 	}
 	img.product-image {
 		width: 40%;
@@ -294,7 +308,10 @@ img.product-image {
 		width: 400px;
 		height: 375px;
 		font-size: 12px;
+		.modal-body {
+		}
 	}
+
 	#animation {
 		height: 230;
 		top:31%;

@@ -9,6 +9,7 @@
     });
     $('.modal').modal({
       backdrop: false,
+      keyboard: false,
       show: false
     });
     cursor_shown = false;
@@ -73,7 +74,7 @@
       target = $(this).attr('data-target');
       return $('#' + target).show();
     });
-    return $('.modal').draggable();
+    // return $('.modal').draggable();
   });
 
 }).call(this);
