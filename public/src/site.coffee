@@ -3,6 +3,8 @@ $ ->
 	$('a[rel="popover"]').popover({
 		template: '<div class="popover"><div class="popover-inner"><h3 class="popover-title"></h3><div class="popover-content"><p></p></div></div></div>'
 	});
+	$('a[rel="instruction"]').popover
+		trigger: 'manual'
 	$('.modal').modal({
 		backdrop:false,
 		show:false,

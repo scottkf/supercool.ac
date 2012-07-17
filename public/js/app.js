@@ -144,6 +144,7 @@
     app.collections.components = new Components();
     app.viewmodels.components = new ComponentsViewModel(app.collections.components);
     app.viewmodels.settings = new SettingsViewModel(kb.locale_manager.getLocales());
+    app.viewmodels.interior = new InteriorViewModel(new Instruction());
     ko.applyBindings(app.viewmodels, $('body')[0]);
     app.collections.components.fetch();
     kb.locale_manager.setLocale('en-US');
