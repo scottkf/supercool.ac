@@ -17,10 +17,11 @@ class LocaleManager
     return if !window.Backbone
     @trigger('change', @)
     model.trigger('change') for model in window.app.viewmodels.components.components.collection().models
+    app.viewmodels.interior.reloadPopover()
     # window.app.viewmodels.components.components.collection().fetch()
-    culture_map = @translations_by_locale[@locale_identifier]
-    return if not culture_map
-    @trigger("change:#{key}", value) for key, value of culture_map
+    # culture_map = @translations_by_locale[@locale_identifier]
+    # return if not culture_map
+    # @trigger("change:#{key}", value) for key, value of culture_map
   getLocales: ->
     locales = []
     locales.push(string_id) for string_id, value of @translations_by_locale
@@ -60,12 +61,12 @@ kb.locale_manager = new LocaleManager(null, {
   'fr-FR':
     interior:
       0: 'Démarrer le moteur'
-      1: 'Avec les portes et les fenêtres fermées, Tournez Climatisation Sur'
-      2: 'Définir les contrôles pour faire recirculer avec ventilateur sur le réglage max'
-      3: 'Agiter peut et placer sur plancher avant côté passager dans le véhicule'
-      4: 'Activer peut et quitter immédiatement véhicule et fermer la porte'
-      5: 'Prévoir 10 minutes pour faire circuler des produits (rejets peuvent en 2,5 minutes)'
-      6: 'Ouvrir toutes les portes et avec le véhicule et le conditionnement de l\'air toujours en cours, permettra l\'intérieur du véhicule pour évacuer une supplémentaire de 10 - 15 minutes'
+      1: 'Enclencher l\'air conditionne en laissant les portes et les fenetres fermees'
+      2: 'Mettre le ventilateur sur position maximale et enclencher le bouton activant la circulation interieure de l\'air conditionne'
+      3: 'Secouer l\'atomiseur et placer le sur le sol, cote passager a l\'interieur du vehicule'
+      4: 'Activer l\'atomiseur et immediatement sortir du vehicule et fermer les portes'
+      5: 'Laisser agir pendant 10 minutes (l\'atomiseur se decharge en 2.5 minutes)'
+      6: 'Ouvrir toutes les portes en maintenant l\'air conditionne et le moteur allume pendant 10 a 15 minutes supplementaires'
   'it-IT':
     interior:
       0: 'Avviare il motore'

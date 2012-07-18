@@ -34,7 +34,7 @@
     };
 
     LocaleManager.prototype.setLocale = function(locale_identifier) {
-      var culture_map, key, model, value, _i, _len, _ref, _results;
+      var model, _i, _len, _ref;
       this.locale_identifier = locale_identifier;
       if (!window.Backbone) {
         return;
@@ -45,16 +45,7 @@
         model = _ref[_i];
         model.trigger('change');
       }
-      culture_map = this.translations_by_locale[this.locale_identifier];
-      if (!culture_map) {
-        return;
-      }
-      _results = [];
-      for (key in culture_map) {
-        value = culture_map[key];
-        _results.push(this.trigger("change:" + key, value));
-      }
-      return _results;
+      return app.viewmodels.interior.reloadPopover();
     };
 
     LocaleManager.prototype.getLocales = function() {
@@ -109,12 +100,12 @@
     'fr-FR': {
       interior: {
         0: 'Démarrer le moteur',
-        1: 'Avec les portes et les fenêtres fermées, Tournez Climatisation Sur',
-        2: 'Définir les contrôles pour faire recirculer avec ventilateur sur le réglage max',
-        3: 'Agiter peut et placer sur plancher avant côté passager dans le véhicule',
-        4: 'Activer peut et quitter immédiatement véhicule et fermer la porte',
-        5: 'Prévoir 10 minutes pour faire circuler des produits (rejets peuvent en 2,5 minutes)',
-        6: 'Ouvrir toutes les portes et avec le véhicule et le conditionnement de l\'air toujours en cours, permettra l\'intérieur du véhicule pour évacuer une supplémentaire de 10 - 15 minutes'
+        1: 'Enclencher l\'air conditionne en laissant les portes et les fenetres fermees',
+        2: 'Mettre le ventilateur sur position maximale et enclencher le bouton activant la circulation interieure de l\'air conditionne',
+        3: 'Secouer l\'atomiseur et placer le sur le sol, cote passager a l\'interieur du vehicule',
+        4: 'Activer l\'atomiseur et immediatement sortir du vehicule et fermer les portes',
+        5: 'Laisser agir pendant 10 minutes (l\'atomiseur se decharge en 2.5 minutes)',
+        6: 'Ouvrir toutes les portes en maintenant l\'air conditionne et le moteur allume pendant 10 a 15 minutes supplementaires'
       }
     },
     'it-IT': {

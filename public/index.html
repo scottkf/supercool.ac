@@ -58,8 +58,9 @@
 		    	<!-- /ko -->
     		</div>
             <div class="hide vehicle-group" id="interior-group" class="vehicle-group">
-                <img src="img/interior3.jpg" /><br />
-                <a href="#" rel="instruction" data-bind="attr: {'data-content': interior.labels}" data-original-title=""></a>
+                <img src="img/interior3.jpg" />
+                <div class="support hide" data-bind="attr: {'data-step': interior.step}"></div>
+                <a href="#" rel="instruction" data-bind="attr: {'data-step': interior.step, 'data-content': interior.label()[interior.step()]}" data-original-title="Instructions <div id='slideshow-buttons'><i class='icon-stop' /><i class='icon-backward' /><i class='icon-forward' /></div>"></a>
             </div>
     	</div>
     </div>
@@ -119,8 +120,8 @@
     <script src="js/models/instruction.js"></script>
 	<script src="js/models/components.js"></script>
     <script src="js/models/locale_manager.js"></script>
-	<script src="js/viewmodels/components.js"></script>
     <script src="js/viewmodels/interior.js"></script>
+	<script src="js/viewmodels/components.js"></script>
     <script src="js/viewmodels/settings.js"></script>
 	<!--
 	<script src="js/viewmodels/settings.js"></script>

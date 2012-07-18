@@ -3,6 +3,8 @@ class window.Instruction extends Backbone.Model
 		step: 0
 		steps: 7
 
+	text: ->
+		kb.locale_manager.get('interior')[@get('step')]
 	next: ->
 		@set 'step', (@get('step') + 1) % @get('steps')
 		@get('step')

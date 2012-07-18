@@ -1,10 +1,11 @@
 $ ->
 
 	$('a[rel="popover"]').popover({
-		template: '<div class="popover"><div class="popover-inner"><h3 class="popover-title"></h3><div class="popover-content"><p></p></div></div></div>'
+		template: '<div class="popover car"><div class="popover-inner"><h3 class="popover-title"></h3><div class="popover-content"><p></p></div></div></div>'
 	});
 	$('a[rel="instruction"]').popover
-		trigger: 'manual'
+		template: '<div class="popover interior" data-step="0"><div class="popover-inner"><h3 class="popover-title"></h3><div class="popover-content"><p data-bind="text: interior.label()[interior.step()]"></p></div></div></div>'
+		# trigger: 'manual'
 	$('.modal').modal({
 		backdrop:false,
 		show:false,
@@ -57,15 +58,50 @@ $ ->
 	document.body.addEventListener 'touchmove', (event) ->
   		event.preventDefault()
 
-
+  	timer = null
+  	time = 5000
+	resetSlideShow = =>
+		stopSlideShow()
+		setTimeout(->
+				startSlideShow()
+			,1000)
 	$('#hybrid-button').on 'click', ->
 		$('#car').attr('src', 'img/hybrid-car.jpg')
 		app.viewmodels.components.components.collection().models[1].set('category', 'hybrid-compressor')
+		$('a[rel]').popover('hide')
+		clearInterval(timer)
 	$('#standard-button').on 'click', ->
 		$('#car').attr('src', 'img/standard-car.jpg')
 		app.viewmodels.components.components.collection().models[1].set('category', 'compressor')
+		$('a[rel]').popover('hide')
+		clearInterval(timer)
 	$('#interior-button').on 'click', ->
 		$('.modal').modal('hide')
+		clearInterval(timer)
+		$('a[rel]').popover('hide')
+		$('a[rel=instruction]').popover('show')
+		timer = setInterval(->
+					app.viewmodels.interior.next()
+				,time)
+	$('#content').on 'click', 'i', () ->
+		switch $(this).attr('class')
+			when 'icon-stop'
+				clearInterval(timer)
+				$(this).attr('class', 'icon-play')
+			when 'icon-play'
+				$(this).attr('class', 'icon-stop')
+				timer = setInterval(->
+							app.viewmodels.interior.next()
+						,time)
+			else 
+				if $(this).attr('class') == 'icon-forward'
+					app.viewmodels.interior.next()
+				else
+					app.viewmodels.interior.previous()
+				clearInterval(timer)
+				timer = setInterval(->
+							app.viewmodels.interior.next()
+						,time)
 	$('.modal').live 'show', ->
 		if (!$(this).hasClass('in'))
 			$('.modal').modal('hide')			

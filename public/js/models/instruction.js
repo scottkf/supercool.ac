@@ -16,6 +16,10 @@
       steps: 7
     };
 
+    Instruction.prototype.text = function() {
+      return kb.locale_manager.get('interior')[this.get('step')];
+    };
+
     Instruction.prototype.next = function() {
       this.set('step', (this.get('step') + 1) % this.get('steps'));
       return this.get('step');

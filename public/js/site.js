@@ -2,13 +2,13 @@
 (function() {
 
   $(function() {
-    var cursor_shown,
+    var cursor_shown, resetSlideShow, time, timer,
       _this = this;
     $('a[rel="popover"]').popover({
-      template: '<div class="popover"><div class="popover-inner"><h3 class="popover-title"></h3><div class="popover-content"><p></p></div></div></div>'
+      template: '<div class="popover car"><div class="popover-inner"><h3 class="popover-title"></h3><div class="popover-content"><p></p></div></div></div>'
     });
     $('a[rel="instruction"]').popover({
-      trigger: 'manual'
+      template: '<div class="popover interior" data-step="0"><div class="popover-inner"><h3 class="popover-title"></h3><div class="popover-content"><p data-bind="text: interior.label()[interior.step()]"></p></div></div></div>'
     });
     $('.modal').modal({
       backdrop: false,
@@ -54,16 +54,56 @@
     document.body.addEventListener('touchmove', function(event) {
       return event.preventDefault();
     });
+    timer = null;
+    time = 5000;
+    resetSlideShow = function() {
+      stopSlideShow();
+      return setTimeout(function() {
+        return startSlideShow();
+      }, 1000);
+    };
     $('#hybrid-button').on('click', function() {
       $('#car').attr('src', 'img/hybrid-car.jpg');
-      return app.viewmodels.components.components.collection().models[1].set('category', 'hybrid-compressor');
+      app.viewmodels.components.components.collection().models[1].set('category', 'hybrid-compressor');
+      $('a[rel]').popover('hide');
+      return clearInterval(timer);
     });
     $('#standard-button').on('click', function() {
       $('#car').attr('src', 'img/standard-car.jpg');
-      return app.viewmodels.components.components.collection().models[1].set('category', 'compressor');
+      app.viewmodels.components.components.collection().models[1].set('category', 'compressor');
+      $('a[rel]').popover('hide');
+      return clearInterval(timer);
     });
     $('#interior-button').on('click', function() {
-      return $('.modal').modal('hide');
+      $('.modal').modal('hide');
+      clearInterval(timer);
+      $('a[rel]').popover('hide');
+      $('a[rel=instruction]').popover('show');
+      return timer = setInterval(function() {
+        return app.viewmodels.interior.next();
+      }, time);
+    });
+    $('#content').on('click', 'i', function() {
+      switch ($(this).attr('class')) {
+        case 'icon-stop':
+          clearInterval(timer);
+          return $(this).attr('class', 'icon-play');
+        case 'icon-play':
+          $(this).attr('class', 'icon-stop');
+          return timer = setInterval(function() {
+            return app.viewmodels.interior.next();
+          }, time);
+        default:
+          if ($(this).attr('class') === 'icon-forward') {
+            app.viewmodels.interior.next();
+          } else {
+            app.viewmodels.interior.previous();
+          }
+          clearInterval(timer);
+          return timer = setInterval(function() {
+            return app.viewmodels.interior.next();
+          }, time);
+      }
     });
     $('.modal').live('show', function() {
       if (!$(this).hasClass('in')) {
