@@ -56,15 +56,36 @@ $ ->
 	# 			$('#uv-light').css('display', 'none')
 				# $('#leak-image').toggle()
 	document.body.addEventListener 'touchmove', (event) ->
-  		event.preventDefault()
+		event.preventDefault()
 
-  	timer = null
-  	time = 5000
-	resetSlideShow = =>
-		stopSlideShow()
-		setTimeout(->
-				startSlideShow()
-			,1000)
+	window.effects = 
+		smoke:
+			shape: 'circle'
+			velocity: new Vector({y: -0.45})
+			xVariance: 10
+			yVariance: 15
+			spawnSpeed: 1
+			generations: 100000
+			maxParticles: 500
+			size: 15
+			sizeVariance: 10
+			life: 350
+			lifeVariance: 50
+			direction: 0
+			directionVariance: 80
+			color: '#ccc'
+			opacity: 1
+			onDraw: (p) ->
+				p.opacity = 0.251 - (p.age / p.life) * 0.25
+	window.onload = ->
+		canvas = $('#particle_canvas')[0]
+		if canvas
+			window.particles = new ParticleCanvas(canvas, {x: 500})
+			particles.update(effects.smoke)
+			particles.start()
+
+	timer = null
+	time = 5000
 	$('#hybrid-button').on 'click', ->
 		$('#car').attr('src', 'img/hybrid-car.jpg')
 		app.viewmodels.components.components.collection().models[1].set('category', 'hybrid-compressor')
@@ -76,13 +97,13 @@ $ ->
 		$('a[rel]').popover('hide')
 		clearInterval(timer)
 	$('#interior-button').on 'click', ->
-		$('.modal').modal('hide')
 		clearInterval(timer)
-		$('a[rel]').popover('hide')
-		$('a[rel=instruction]').popover('show')
+		$('a[rel=popover]').popover('hide')
+		$('.modal').modal('hide')
 		timer = setInterval(->
 					app.viewmodels.interior.next()
 				,time)
+		$('a[rel=instruction]').popover('show')
 	$('#content').on 'click', 'i', () ->
 		switch $(this).attr('class')
 			when 'icon-stop'
@@ -99,9 +120,10 @@ $ ->
 				else
 					app.viewmodels.interior.previous()
 				clearInterval(timer)
-				timer = setInterval(->
-							app.viewmodels.interior.next()
-						,time)
+				if $('#slideshow-buttons i.icon-stop').length > 0
+					timer = setInterval(->
+								app.viewmodels.interior.next()
+							,time)
 	$('.modal').live 'show', ->
 		if (!$(this).hasClass('in'))
 			$('.modal').modal('hide')			

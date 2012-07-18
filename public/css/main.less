@@ -93,11 +93,40 @@ a.component-text {
 		}
 	}
 }
+canvas {
+	position:absolute;
+	top:0;
+	height:500px;
+	width:700px;
+	top: 34%;
+	left: 22%;
+	display: none;
+	&[data-step='4'], &[data-step='5'], &[data-step='6'] {
+		display: block;
+	}
+}
 #interior-group {
-	div {
+	.support {
 		position: absolute;
 		left: 0;
-		.transition(all 0.5s ease)
+		top: 0;
+		.transition(all 0.5s ease);
+		&[data-step='3'] {
+			height: 195px;
+			width:71px;
+			left: 62%;
+			top: 67%;
+			display: block;
+			background: url(/img/can-placement.png) no-repeat;
+		}
+		&[data-step='4'], &[data-step='5'], &[data-step='6'] {
+			height: 195px;
+			width:71px;
+			left: 62%;
+			top: 67%;
+			display: block;
+			background: url(/img/can-placement-2.png) no-repeat;
+		}	
 	}
 	img,div {
 	}
@@ -123,11 +152,11 @@ a.component-text {
 		left: 46% !important;
 	}
 	&[data-step="3"] {
-		top: 60% !important;
+		top: 42% !important;
 		left: 60% !important;
 	}
 	&[data-step="4"] {
-		top: 60% !important;
+		top: 42% !important;
 		left: 60% !important;
 	}
 	&[data-step="5"] {
@@ -290,6 +319,17 @@ img.product-image {
 
 // Portrait tablet to landscape and desktop
 @media (min-width: 768px) and (max-width: 979px) {
+	#interior-group {
+		canvas {
+			top:17%;
+			left:-4%;
+		}
+		.support {
+			&[data-step='3'],&[data-step='4'],&[data-step='5'],&[data-step='6'] {
+				background-size: 50px;
+			}
+		}
+	}
 	#animation {
 		top:32%;
 		left:34%;
@@ -355,6 +395,17 @@ img.product-image {
 
 // ipad portrait
 @media (min-width: 980px) and (max-width: 1199px) {
+	#interior-group {
+		canvas {
+			top:28%;
+			left:13%;
+		}
+		.support {
+			&[data-step='3'],&[data-step='4'],&[data-step='5'],&[data-step='6'] {
+				background-size: 60px;
+			}
+		}
+	}
 	.modal {
 		width: 400px;
 		height: 375px;

@@ -2,7 +2,7 @@
 (function() {
 
   $(function() {
-    var cursor_shown, resetSlideShow, time, timer,
+    var cursor_shown, time, timer,
       _this = this;
     $('a[rel="popover"]').popover({
       template: '<div class="popover car"><div class="popover-inner"><h3 class="popover-title"></h3><div class="popover-content"><p></p></div></div></div>'
@@ -54,14 +54,43 @@
     document.body.addEventListener('touchmove', function(event) {
       return event.preventDefault();
     });
+    window.effects = {
+      smoke: {
+        shape: 'circle',
+        velocity: new Vector({
+          y: -0.45
+        }),
+        xVariance: 10,
+        yVariance: 15,
+        spawnSpeed: 1,
+        generations: 100000,
+        maxParticles: 500,
+        size: 15,
+        sizeVariance: 10,
+        life: 350,
+        lifeVariance: 50,
+        direction: 0,
+        directionVariance: 80,
+        color: '#ccc',
+        opacity: 1,
+        onDraw: function(p) {
+          return p.opacity = 0.251 - (p.age / p.life) * 0.25;
+        }
+      }
+    };
+    window.onload = function() {
+      var canvas;
+      canvas = $('#particle_canvas')[0];
+      if (canvas) {
+        window.particles = new ParticleCanvas(canvas, {
+          x: 500
+        });
+        particles.update(effects.smoke);
+        return particles.start();
+      }
+    };
     timer = null;
     time = 5000;
-    resetSlideShow = function() {
-      stopSlideShow();
-      return setTimeout(function() {
-        return startSlideShow();
-      }, 1000);
-    };
     $('#hybrid-button').on('click', function() {
       $('#car').attr('src', 'img/hybrid-car.jpg');
       app.viewmodels.components.components.collection().models[1].set('category', 'hybrid-compressor');
@@ -75,13 +104,13 @@
       return clearInterval(timer);
     });
     $('#interior-button').on('click', function() {
-      $('.modal').modal('hide');
       clearInterval(timer);
-      $('a[rel]').popover('hide');
-      $('a[rel=instruction]').popover('show');
-      return timer = setInterval(function() {
+      $('a[rel=popover]').popover('hide');
+      $('.modal').modal('hide');
+      timer = setInterval(function() {
         return app.viewmodels.interior.next();
       }, time);
+      return $('a[rel=instruction]').popover('show');
     });
     $('#content').on('click', 'i', function() {
       switch ($(this).attr('class')) {
@@ -100,9 +129,11 @@
             app.viewmodels.interior.previous();
           }
           clearInterval(timer);
-          return timer = setInterval(function() {
-            return app.viewmodels.interior.next();
-          }, time);
+          if ($('#slideshow-buttons i.icon-stop').length > 0) {
+            return timer = setInterval(function() {
+              return app.viewmodels.interior.next();
+            }, time);
+          }
       }
     });
     $('.modal').live('show', function() {
